@@ -1,0 +1,38 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo svg {
+  @media (max-width: $viewport--md) {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.logo__company {
+  margin-left: 16px;
+  cursor: default;
+}
+
+.logo__company > p:first-child {
+  margin: 0;
+  font-family: $font-roboto-condensed;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 33px;
+}
+
+.logo__company--footer > p:first-child {
+  color: $color-text-logo;
+}
+
+.logo__company p:last-child {
+  margin: 0;
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-logo-description;
+}
+

@@ -1,0 +1,26 @@
+.content {
+  width: 587px;
+  padding-right: 40px;
+
+  @media (max-width: 1385px) {
+    width: 240px;
+  }
+}
+
+.content__wrap {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1385px) {
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+
+.content ul {
+  width: 240px;
+
+  @media (max-width: 1385px) {
+    width: 100%;
+  }
+}
