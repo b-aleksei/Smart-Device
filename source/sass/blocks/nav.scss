@@ -49,6 +49,7 @@
 
 .nav__company {
   margin-left: 16px;
+  cursor: default;
 
   @media (max-width: $viewport--md) {
     display: none;
@@ -132,6 +133,27 @@
   }
 }
 
+.nav__link--mail,
+.nav__link--phone {
+  transition: color $default-transition;
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+  }
+
+  &:active {
+    @include push;
+  }
+
+  &:hover svg {
+    animation-name: buzz-out;
+    animation-duration: $default-transition;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+}
+
 .nav__link--mail svg {
   margin-right: 20px;
 
@@ -143,6 +165,7 @@
 }
 
 .nav__btn {
+  position: relative;
   padding: 13px 26px;
   margin-bottom: 20px;
   font-family: $font-roboto-condensed;
@@ -153,9 +176,23 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border: 2px solid $color-default-white;
+  border-radius: 5px;
   background-color: transparent;
   color: inherit;
-  border-radius: 5px;
+  cursor: pointer;
+
+  @include radial-out;
+
+
+  /*  &:hover,
+    &:focus {
+      color: $color-blue;
+      border-color: $color-blue;
+    }*/
+
+  &:active {
+    @include push;
+  }
 }
 
 @media (max-width: $viewport--lg) {

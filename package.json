@@ -11,7 +11,7 @@
     "eslint": "eslint source/js/",
     "scss:fix": "stylelint source/sass/ --fix",
     "js:fix": "eslint source/js/**/* --fix",
-    "test": "npm run editorconfig & npm run stylelint & eslint source/js/",
+    "test": "npm run editorconfig & npm run stlint & eslint source/js/",
     "build": "gulp build",
     "start": "gulp start",
     "webp": "gulp webp",
