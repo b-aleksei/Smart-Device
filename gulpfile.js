@@ -69,7 +69,7 @@ gulp.task(`svgo`, function () {
 gulp.task(`sprite`, function () {
   return gulp.src(`source/img/*.svg`)
       .pipe(svgstore({inlineSvg: true}))
-      .pipe(rename(`sprite_auto.svg`))
+      .pipe(rename(`sprite.svg`))
       .pipe(gulp.dest(`source/img`));
 });
 

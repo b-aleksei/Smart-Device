@@ -1,22 +1,31 @@
 <header class="header @@if (context.mod) { header--@@mod }">
   <nav class="header__nav nav">
-    <button class="nav__toggle" type="button" aria-label="открыть-закрыть меню"
-            aria-expanded="false">
-      <span class="nav__burger"></span>
-    </button>
-    <ul class="nav__list">
-      <li class="nav__item">
-        <a class="nav__link" href="#about">О нас</a>
+    <a class="nav__link nav__link--logo">
+      <svg width="52" height="52" role="img" aria-label="логотип">
+        <use href="#logo"></use>
+      </svg>
+      <div class="nav__company">
+        <p>Smart Device</p>
+        <p>умные технологии</p>
+      </div>
+    </a>
+    <div class="nav__decor"></div>
+    <ul class="nav__contact">
+      <li>
+        <a class="nav__link nav__link--mail" href="mailto:info@sd.ru" aria-label="Написать нам письмо">
+          <svg width="19" height="14" aria-hidden="true">
+            <use href="#mail"></use>
+          </svg>
+          <span>info@sd.ru</span></a>
       </li>
-      <li class="nav__item">
-        <a class="nav__link" href="#variety">Виды велосипедов</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="#video">Видео про велосипеды</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="#contact">Контакты</a>
+      <li>
+        <a class="nav__link nav__link--phone" href="tel:+74950005252" aria-label="Позвонить нам">
+          <svg width="18" height="18" aria-hidden="true">
+            <use href="#phone"></use>
+          </svg>
+          <span>+7 (495) 000 52 52</span></a>
       </li>
     </ul>
+    <button class="nav__btn" type="button">Заказать звонок</button>
   </nav>
 </header>
