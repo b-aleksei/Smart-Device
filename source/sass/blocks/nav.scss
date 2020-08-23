@@ -116,14 +116,12 @@
   }
 
   &:active {
-    @include push;
+    @include anim-push;
   }
 
-  &:hover svg {
-    animation-name: buzz-out;
-    animation-duration: $default-transition;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
+  &:hover svg,
+  &:focus svg {
+    @include anim-buzz-out;
   }
 }
 
@@ -154,10 +152,10 @@
   color: inherit;
   cursor: pointer;
 
-  @include radial-out;
+  @include anim-shutter-out-horizontal;
 
   &:active {
-    @include push;
+    @include anim-push;
   }
 }
 

@@ -47,9 +47,20 @@
 }
 
 .info__list a {
+  display: block;
   font-size: 15px;
   line-height: 25px;
   color: rgba($color-text-black, 0.5);
+  transition: $default-transition;
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+  }
+
+  &:active {
+    @include anim-push
+  }
 }
 
 .info__item--media {
@@ -96,6 +107,7 @@
   color: rgba($color-text-black, 0.5);
   text-transform: uppercase;
   text-align: right;
+  cursor: default;
 
   @media (max-width: $viewport--lg) {
     display: block;

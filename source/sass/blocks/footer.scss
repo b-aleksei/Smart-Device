@@ -65,6 +65,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba($color-text-black, 0.5);
+  cursor: default;
 
   @media (max-width: 1385px) {
     margin-right: 0;

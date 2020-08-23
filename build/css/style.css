@@ -152,22 +152,6 @@ a {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
-@media (max-width: 1023px) {
-  @-webkit-keyframes push {
-    50% {
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6); }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1); } }
-  @keyframes push {
-    50% {
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6); }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1); } } }
-
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -388,7 +372,9 @@ a {
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1; }
   .nav__link--mail:hover svg,
-  .nav__link--phone:hover svg {
+  .nav__link--mail:focus svg,
+  .nav__link--phone:hover svg,
+  .nav__link--phone:focus svg {
     -webkit-animation-name: buzz-out;
             animation-name: buzz-out;
     -webkit-animation-duration: 0.3s;
@@ -422,8 +408,8 @@ a {
   background-color: transparent;
   color: inherit;
   cursor: pointer;
+  position: relative;
   z-index: 0;
-  overflow: hidden;
   -webkit-transition: color 0.3s;
   transition: color 0.3s; }
   .nav__btn::before {
@@ -431,20 +417,21 @@ a {
     position: absolute;
     z-index: -1;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: #00b2ff;
-    border-radius: 100%;
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    background: #00b2ff;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
     -webkit-transition: -webkit-transform 0.3s ease-out;
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
-  .nav__btn:hover::before {
-    -webkit-transform: scale(2);
-            transform: scale(2); }
+  .nav__btn:hover, .nav__btn:focus, .nav__btn:active {
+    color: white; }
+    .nav__btn:hover::before, .nav__btn:focus::before, .nav__btn:active::before {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1); }
   .nav__btn:active {
     -webkit-animation-name: push;
             animation-name: push;
@@ -509,9 +496,23 @@ a {
   font-style: normal; }
 
 .info__list a {
+  display: block;
   font-size: 15px;
   line-height: 25px;
-  color: rgba(27, 45, 55, 0.5); }
+  color: rgba(27, 45, 55, 0.5);
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .info__list a:hover, .info__list a:focus {
+    color: #00b2ff; }
+  .info__list a:active {
+    -webkit-animation-name: push;
+            animation-name: push;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1; }
 
 .info__item--media {
   display: -webkit-box;
@@ -566,7 +567,8 @@ a {
   letter-spacing: 0.04em;
   color: rgba(27, 45, 55, 0.5);
   text-transform: uppercase;
-  text-align: right; }
+  text-align: right;
+  cursor: default; }
   @media (max-width: 1023px) {
     .info__data {
       display: block; } }
@@ -598,6 +600,38 @@ a {
 
 .social-icon__item:not(:last-child) {
   margin-right: 16px; }
+
+.social-icon__link svg {
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.social-icon__link {
+  position: relative;
+  display: inline-block;
+  color: #cdcdcd;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .social-icon__link:hover, .social-icon__link:focus {
+    color: #00b2ff; }
+    .social-icon__link:hover svg, .social-icon__link:focus svg {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
+  .social-icon__link:active {
+    color: #cdcdcd; }
+    .social-icon__link:active svg {
+      -webkit-transform: scale(1);
+              transform: scale(1); }
+    .social-icon__link:active::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #00b2ff;
+      z-index: -1; }
 
 .content {
   width: 587px;
@@ -659,10 +693,9 @@ a {
   .contact__list {
     padding-right: 30px; } }
 
-.accordion__toggle {
-  display: none; }
-
 @media (max-width: 767px) {
+  .accordion {
+    position: relative; }
   .accordion__title {
     position: relative;
     cursor: pointer; }
@@ -673,7 +706,9 @@ a {
       right: 2px;
       width: 16px;
       height: 1px;
-      background-color: #c4c4c4; }
+      background-color: #c4c4c4;
+      -webkit-transition: 0.3s ease;
+      transition: 0.3s ease; }
     .accordion__title::after {
       position: absolute;
       content: "";
@@ -685,13 +720,13 @@ a {
       -webkit-transform: scale(1);
               transform: scale(1);
       background-color: #c4c4c4;
-      -webkit-transition: -webkit-transform 0.3s ease;
-      transition: -webkit-transform 0.3s ease;
-      transition: transform 0.3s ease;
-      transition: transform 0.3s ease, -webkit-transform 0.3s ease; }
+      -webkit-transition: 0.3s ease;
+      transition: 0.3s ease; }
+    .accordion__title:hover::before, .accordion__title:hover::after {
+      background-color: #00b2ff; }
   .accordion__content {
     height: 0;
-    overflow-y: hidden;
+    overflow: hidden;
     -webkit-transition: height 0.3s ease-in-out;
     transition: height 0.3s ease-in-out; }
   .accordion__toggle:checked ~ .accordion__content {
@@ -700,7 +735,25 @@ a {
     height: auto; }
   .accordion__toggle:checked + label::after {
     -webkit-transform: scale(0);
-            transform: scale(0); } }
+            transform: scale(0); }
+  .accordion__toggle:focus ~ .accordion__content::before,
+  .accordion__toggle:active ~ .accordion__content::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #00b2ff;
+    height: 2px;
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out; }
+  .accordion__toggle:focus ~ .accordion__content::before,
+  .accordion__toggle:active ~ .accordion__content::before {
+    left: 0;
+    right: 0; }
+  .accordion__toggle:focus + label::before, .accordion__toggle:focus + label::after {
+    background-color: #00b2ff; } }
 
 .footer__wrap-copyright {
   border-top: 1px solid rgba(98, 105, 98, 0.2); }
@@ -759,7 +812,8 @@ a {
   line-height: 24px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(27, 45, 55, 0.5); }
+  color: rgba(27, 45, 55, 0.5);
+  cursor: default; }
   @media (max-width: 1385px) {
     .footer__copyright {
       margin-right: 0; } }
