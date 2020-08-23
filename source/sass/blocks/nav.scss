@@ -40,37 +40,10 @@
   flex-shrink: 0;
 }
 
-.nav__link--logo svg {
-  @media (max-width: $viewport--md) {
-    width: 38px;
-    height: 38px;
-  }
-}
-
 .nav__company {
-  margin-left: 16px;
-  cursor: default;
-
   @media (max-width: $viewport--md) {
     display: none;
   }
-}
-
-.nav__company p:first-child {
-  margin: 0;
-  font-family: $font-roboto-condensed;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 33px;
-}
-
-.nav__company p:last-child {
-  margin: 0;
-  font-family: $font-roboto;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  color: $color-logo-description;
 }
 
 .nav__decor {
@@ -143,14 +116,12 @@
   }
 
   &:active {
-    @include push;
+    @include anim-push;
   }
 
-  &:hover svg {
-    animation-name: buzz-out;
-    animation-duration: $default-transition;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
+  &:hover svg,
+  &:focus svg {
+    @include anim-buzz-out;
   }
 }
 
@@ -181,17 +152,10 @@
   color: inherit;
   cursor: pointer;
 
-  @include radial-out;
-
-
-  /*  &:hover,
-    &:focus {
-      color: $color-blue;
-      border-color: $color-blue;
-    }*/
+  @include anim-shutter-out-horizontal;
 
   &:active {
-    @include push;
+    @include anim-push;
   }
 }
 

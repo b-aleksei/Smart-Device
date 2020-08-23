@@ -1,0 +1,78 @@
+@media (max-width: $viewport--md) {
+  .accordion {
+    position: relative;
+  }
+
+  .accordion__title {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 2px;
+      width: 16px;
+      height: 1px;
+      background-color: $color-sign-accordeon;
+      transition: $default-transition ease;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 16px;
+      top: 50%;
+      right: 10px;
+      margin-top: -8px;
+      transform: scale(1);
+      background-color: $color-sign-accordeon;
+      transition: $default-transition ease;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        background-color: $color-blue;
+      }
+    }
+  }
+
+  .accordion__content {
+    height: 0;
+    overflow: hidden;
+    transition: height $default-transition ease-in-out;
+  }
+
+  .accordion__toggle {
+    &:checked ~ .accordion__content {
+      margin-top: 5px;
+      margin-bottom: 26px;
+      height: auto;
+    }
+
+    &:checked + label {
+      &::after {
+        transform: scale(0);
+      }
+    }
+
+    &:focus ~ .accordion__content,
+    &:active ~ .accordion__content {
+      @include anim-underline-from-center;
+
+      &::before {
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &:focus + label {
+      &::before,
+      &::after {
+        background-color: $color-blue;
+      }
+    }
+  }
+}
