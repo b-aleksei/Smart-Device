@@ -1,1 +1,21 @@
+.contact {
+  width: 333px;
 
+  @media (max-width: $viewport--lg) {
+    width: 345px;
+    box-sizing: content-box;
+    padding-right: 3.3%;
+  }
+
+  @media (max-width: $viewport--md) {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 0;
+  }
+}
+
+.contact__list {
+  @media (max-width: $viewport--md) {
+    padding-right: 30px;
+  }
+}

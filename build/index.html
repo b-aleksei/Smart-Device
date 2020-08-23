@@ -142,7 +142,7 @@
     <h2 class="visually-hidden">Информация о сайте</h2>
 
     <div class="info__item info__item--media">
-      <a class="logo">
+      <a class="logo logo--footer">
         <svg width="52" height="52" role="img" aria-label="логотип">
           <use href="#logo"></use>
         </svg>
@@ -151,6 +151,8 @@
           <p>умные технологии</p>
         </div>
       </a>
+
+      <p class="info__data">1999-2018 SD Service Devices</p>
 
       <ul class="social-icon">
         <li class="social-icon__item">
@@ -179,8 +181,10 @@
 
 
     <div class="info__item content">
-      <h3>Разделы сайта</h3>
-      <div class="content__wrap">
+      <h3 class="visually-hidden">Разделы сайта</h3>
+      <input class="accordion__toggle" type="checkbox" id="checkbox-1">
+      <label for="checkbox-1" class="accordion__title">Разделы сайта</label>
+      <div class="content__wrap accordion__content">
         <ul class="info__list">
           <li>
             <a href="#">О компании</a>
@@ -195,7 +199,7 @@
             <a href="#">Монтаж печатных плат</a>
           </li>
         </ul>
-        <ul  class="info__list">
+        <ul class="info__list">
           <li>
             <a href="#">Комплектующие</a>
           </li>
@@ -209,9 +213,11 @@
       </div>
     </div>
 
-    <address class="info__item contact">
-      <h3>Наш офис</h3>
-      <ul class="info__list">
+    <address class="info__item contact accordion">
+      <h3 class="visually-hidden">Наш офис</h3>
+      <input class="accordion__toggle" type="checkbox" id="checkbox-2">
+      <label for="checkbox-2" class="accordion__title">Наш офис</label>
+      <ul class="info__list contact__list accordion__content">
         <li>
           <a href="#">г. Мытищи, Олимпийский проспект, д.10</a>
         </li>
@@ -227,12 +233,13 @@
       </ul>
     </address>
   </section>
-  <div class="footer__horizontal-line"></div>
   <div class="footer__wrap-copyright">
-    <p class="footer__copyright footer__copyright--first">Все права защищены</p>
-    <p class="footer__copyright footer__copyright--second">1999-2018 SD Service Devices</p>
-    <p class="footer__copyright footer__copyright--third">Условия конфиденциальности</p>
-    <p class="footer__copyright">Developed by wow studio</p>
+    <div class="footer__container">
+      <p class="footer__copyright footer__copyright--first">Все права защищены</p>
+      <p class="footer__copyright footer__copyright--second">1999-2018 SD Service Devices</p>
+      <p class="footer__copyright footer__copyright--third">Условия конфиденциальности</p>
+      <p class="footer__copyright">Developed by wow studio</p>
+    </div>
   </div>
 </footer>
 

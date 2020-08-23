@@ -1,12 +1,31 @@
 .logo {
   display: flex;
+  flex-shrink: 0;
+  max-width: 300px;
   align-items: center;
 }
 
+.logo--footer {
+  align-items: start;
+
+  @media (max-width: $viewport--md) {
+    margin-bottom: 7px;
+  }
+}
+
 .logo svg {
+  flex-shrink: 0;
+
   @media (max-width: $viewport--md) {
     width: 38px;
     height: 38px;
+  }
+}
+
+.logo--footer svg {
+  @media (max-width: $viewport--md) {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -21,6 +40,11 @@
   font-weight: 600;
   font-size: 25px;
   line-height: 33px;
+}
+
+.logo__company--footer {
+  margin-top: 3px;
+  margin-bottom: 20px;
 }
 
 .logo__company--footer > p:first-child {

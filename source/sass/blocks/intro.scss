@@ -12,6 +12,7 @@
 
   @media (max-width: $viewport--lg) {
     background-image: url("../img/tablet/bg-main@1x.jpg");
+    margin-bottom: 19px;
 
     @include retina {
       background-image: url("../img/tablet/bg-main@2x.jpg");
@@ -20,6 +21,7 @@
 
   @media (max-width: $viewport--md) {
     background-image: url("../img/mobile/bg-main@1x.jpg");
+    margin-bottom: 46px;
 
     @include retina {
       background-image: url("../img/mobile/bg-main@2x.jpg");

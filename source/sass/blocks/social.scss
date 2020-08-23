@@ -1,8 +1,20 @@
 .social-icon {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 2px;
+    max-width: 220px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: $viewport--md) {
+    max-width: 260px;
+    margin-bottom: 48px;
+  }
 }
 
 .social-icon__item:not(:last-child) {

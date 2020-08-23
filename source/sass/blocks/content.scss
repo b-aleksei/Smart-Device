@@ -3,7 +3,20 @@
   padding-right: 40px;
 
   @media (max-width: 1385px) {
+    width: 280px;
+  }
+
+  @media (max-width: $viewport--lg) {
+    padding-left: 3.3%;
     width: 240px;
+    box-sizing: content-box;
+  }
+
+  @media (max-width: $viewport--md) {
+    width: 100%;
+    padding: 0 15px;
+    border-bottom: 1px solid rgba($color-hl, 0.2);
+    margin-bottom: 0;
   }
 }
 
