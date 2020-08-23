@@ -59,7 +59,7 @@
   }
 
   &:active {
-    @include anim-push
+    @include anim-push;
   }
 }
 
