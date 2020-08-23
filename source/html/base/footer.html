@@ -1,21 +1,105 @@
-<footer class="footer">
-  <ul class="footer__list">
-    <li class="footer__item">
-      <a class="footer__link footer__link--mail" href="mailto:puteshestviemechta@gmail.ru"
-          aria-label="Написать нам письмо">
-        <svg class="footer__icon footer__icon--mail" width="26" height="20" aria-hidden="true">
-          <use href="#mail"></use>
+<footer class="footer" role="contentinfo">
+  <section class="footer__info info">
+    <h2 class="visually-hidden">Информация о сайте</h2>
+
+    <div class="info__item info__item--media">
+      <a class="logo logo--footer">
+        <svg width="52" height="52" role="img" aria-label="логотип">
+          <use href="#logo"></use>
         </svg>
-        <span>puteshestviemechta@gmail.ru</span>
+        <div class="logo__company logo__company--footer">
+          <p>Service Device</p>
+          <p>умные технологии</p>
+        </div>
       </a>
-    </li>
-    <li class="footer__item footer__item--phone">
-      <a class="footer__link footer__link--phone" href="tel:+749978468446" aria-label="Позвонить нам">
-        <svg class="footer__icon footer__icon--phone" width="22" height="24" aria-hidden="true">
-          <use href="#phone"></use>
-        </svg>
-        <span>+7 (499) -784-684-46</span>
-      </a>
-    </li>
-  </ul>
+
+      <p class="info__data">1999-2018 SD Service Devices</p>
+
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#" aria-label="Посетите нас на фейсбуке">
+            <svg width="27" height="27" role="img">
+              <use href="#fb"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#" aria-label="Посетите нас в одноклассниках">
+            <svg width="27" height="26" role="img">
+              <use href="#ok"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#" aria-label="Посетите нас во в контакте">
+            <svg width="27" height="26" role="img">
+              <use href="#vk"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="info__item content accordion">
+      <h3 class="visually-hidden">Разделы сайта</h3>
+      <input class="accordion__toggle visually-hidden" type="checkbox" id="checkbox-1">
+      <label for="checkbox-1" class="accordion__title">Разделы сайта</label>
+      <div class="content__wrap accordion__content">
+        <ul class="info__list">
+          <li>
+            <a href="#">О компании</a>
+          </li>
+          <li>
+            <a href="#">Продукты</a>
+          </li>
+          <li>
+            <a href="#">Производство печатных плат</a>
+          </li>
+          <li>
+            <a href="#">Монтаж печатных плат</a>
+          </li>
+        </ul>
+        <ul class="info__list">
+          <li>
+            <a href="#">Комплектующие</a>
+          </li>
+          <li>
+            <a href="#">Доставка</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <address class="info__item contact accordion">
+      <h3 class="visually-hidden">Наш офис</h3>
+      <input class="accordion__toggle visually-hidden" type="checkbox" id="checkbox-2">
+      <label for="checkbox-2" class="accordion__title">Наш офис</label>
+      <ul class="info__list contact__list accordion__content">
+        <li>
+          <a href="#">г. Мытищи, Олимпийский проспект, д.10</a>
+        </li>
+        <li>
+          <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+        </li>
+        <li>
+          <a href="tel:+79250038767">+7 (925) 003-87-67</a>
+        </li>
+        <li>
+          <a href="tel:+792692605079">+7 (926) 926-080-79</a>
+        </li>
+      </ul>
+    </address>
+  </section>
+  <div class="footer__wrap-copyright">
+    <div class="footer__container">
+      <p class="footer__copyright footer__copyright--first">Все права защищены</p>
+      <p class="footer__copyright footer__copyright--second">1999-2018 SD Service Devices</p>
+      <p class="footer__copyright footer__copyright--third">Условия конфиденциальности</p>
+      <p class="footer__copyright">Developed by wow studio</p>
+    </div>
+  </div>
 </footer>
