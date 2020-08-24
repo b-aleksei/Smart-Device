@@ -157,11 +157,7 @@
   color: inherit;
   cursor: pointer;
 
-  @include anim-shutter-out-horizontal;
-
-  &:active {
-    @include anim-push;
-  }
+  @include anim-shutter(out);
 }
 
 @media (max-width: $viewport--lg) {
