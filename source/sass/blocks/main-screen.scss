@@ -1,4 +1,5 @@
 .main-screen {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   max-width: 1666px;
@@ -13,7 +14,7 @@
   }
 
   @media (max-width: $viewport--lg) {
-    margin-top: -5px;
+    padding-left: 88px;
   }
 }
 
@@ -23,7 +24,8 @@
   margin-right: 71px;
 
   @media (max-width: $viewport--lg) {
-    width: 404px;
+    width: 430px;
+    margin-right: auto;
   }
 }
 
@@ -31,19 +33,33 @@
   width: 755px;
   padding-bottom: 33.35%;
   background-image: url("../img/desktop/motherboars@1x.png"),
-    url("../img/triangles.svg");
+    url("../img/desktop/triangles.svg");
   background-size: contain, auto;
   background-repeat: no-repeat, no-repeat;
   background-position: 0 center, 0 center;
 
-  @media (max-width: 1309px) {
-    background-size: cover, cover;
+  @include retina {
+    background-image: url("../img/desktop/motherboars@2x.png"),
+      url("../img/desktop/triangles.svg");
   }
 
   @media (max-width: $viewport--lg) {
-    width: 260px;
-    background-image: url("../img/tablet/motherboars@1x.png"),
-    url("../img/triangles.svg");
+    position: absolute;
+    top: 50%;
+    left: 457px;
+    width: 518px;
+    height: 384px;
+    margin-top: -231px;
+    background-image: url("../img/desktop/motherboars@1x.png"),
+    url("../img/tablet/triangles.svg");
+    background-size: 465px 340px, auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 53px 31px, 0 0;
+
+    @include retina {
+      background-image: url("../img/desktop/motherboars@2x.png"),
+      url("../img/tablet/triangles.svg");
+    }
   }
 }
 
@@ -61,6 +77,9 @@
   @media (max-width: $viewport--lg) {
     font-size: 60px;
     line-height: 70px;
+    text-align: left;
+    margin-top: 115px;
+    margin-bottom: 29px;
   }
 }
 
@@ -84,10 +103,13 @@
   @media (max-width: $viewport--lg) {
     font-size: 18px;
     line-height: 28px;
-    padding-left: 48px;
+    padding-left: 51px;
+    padding-right: 30px;
+    margin-bottom: 55px;
 
     &::before {
       width: 33px;
+      top: 16px;
     }
   }
 }
@@ -106,6 +128,11 @@
   background-color: $color-blue;
   color: inherit;
   cursor: pointer;
+
+  @media (max-width: $viewport--lg) {
+    margin-left: 51px;
+    padding: 18px 31px;
+  }
 }
 
 .main-screen__btn-scroll {
@@ -115,4 +142,8 @@
   transform: rotate(-90deg);
   font-size: 14px;
   color: rgba($color-default-white, 0.5);
+
+  @media (max-width: $viewport--lg) {
+   display: none;
+  }
 }
