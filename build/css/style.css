@@ -179,17 +179,22 @@ a {
     .intro {
       background-image: url("../img/mobile/bg-main@2x.jpg"); } }
 
-.intro__height {
-  padding-bottom: 45.73%; }
-  @media (max-width: 1023px) {
-    .intro__height {
-      padding-bottom: 89.09%; } }
-  @media (max-width: 767px) {
-    .intro__height {
-      padding-bottom: 202%; } }
-
 .intro__wrap {
-  width: 100%; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 878px; }
+  @media (max-width: 1023px) {
+    .intro__wrap {
+      min-height: 686px; } }
+  @media (max-width: 767px) {
+    .intro__wrap {
+      min-height: 647px; } }
 
 .logo {
   display: -webkit-box;
@@ -312,7 +317,7 @@ a {
       margin: 0 37px 8px 0; } }
   @media (max-width: 767px) {
     .nav__decor {
-      margin: 0 27px 25px 0; } }
+      margin: 0 27px 6px 0; } }
 
 .nav__contact {
   display: -webkit-box;
@@ -453,6 +458,10 @@ a {
 
 .main-screen {
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,7 +479,17 @@ a {
       margin-left: auto; } }
   @media (max-width: 1023px) {
     .main-screen {
+      overflow: hidden;
       padding-left: 88px; } }
+  @media (max-width: 767px) {
+    .main-screen {
+      padding: 0 15px 30px; }
+      .main-screen::after {
+        content: url("../img/mobile/1motherboars@1x.png");
+        position: absolute;
+        top: 37px;
+        left: 50%;
+        margin-left: -134px; } }
 
 .main-screen__wrap-content {
   position: relative;
@@ -480,10 +499,13 @@ a {
     .main-screen__wrap-content {
       width: 430px;
       margin-right: auto; } }
+  @media (max-width: 767px) {
+    .main-screen__wrap-content {
+      margin: auto; } }
 
 .main-screen__bg {
   width: 755px;
-  padding-bottom: 33.35%;
+  height: 515px;
   background-image: url("../img/desktop/motherboars@1x.png"), url("../img/desktop/triangles.svg");
   background-size: contain, auto;
   background-repeat: no-repeat, no-repeat;
@@ -494,11 +516,10 @@ a {
   @media (max-width: 1023px) {
     .main-screen__bg {
       position: absolute;
-      top: 50%;
+      top: 9px;
       left: 457px;
       width: 518px;
       height: 384px;
-      margin-top: -231px;
       background-image: url("../img/desktop/motherboars@1x.png"), url("../img/tablet/triangles.svg");
       background-size: 465px 340px, auto;
       background-repeat: no-repeat, no-repeat;
@@ -506,6 +527,16 @@ a {
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .main-screen__bg {
       background-image: url("../img/desktop/motherboars@2x.png"), url("../img/tablet/triangles.svg"); } }
+  @media (max-width: 767px) {
+    .main-screen__bg {
+      top: 15px;
+      left: 167px;
+      width: 460px;
+      margin-top: 0;
+      background-image: url("../img/mobile/triangles.svg");
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: 0 0; } }
 
 .main-screen__wrap-content h2 {
   margin-top: 57px;
@@ -522,8 +553,14 @@ a {
       font-size: 60px;
       line-height: 70px;
       text-align: left;
-      margin-top: 115px;
-      margin-bottom: 29px; } }
+      margin: 115px 0 29px; } }
+  @media (max-width: 767px) {
+    .main-screen__wrap-content h2 {
+      position: relative;
+      margin: 230px 0 27px;
+      font-size: 40px;
+      line-height: 47px;
+      z-index: 2; } }
 
 .main-screen__wrap-content p {
   position: relative;
@@ -549,6 +586,13 @@ a {
       .main-screen__wrap-content p::before {
         width: 33px;
         top: 16px; } }
+  @media (max-width: 767px) {
+    .main-screen__wrap-content p {
+      font-size: 16px;
+      line-height: 25px;
+      padding-left: 51px;
+      padding-right: 0;
+      margin-bottom: 41px; } }
 
 .main-screen__btn-form {
   margin-left: 98px;
@@ -568,10 +612,25 @@ a {
     .main-screen__btn-form {
       margin-left: 51px;
       padding: 18px 31px; } }
+  @media (max-width: 767px) {
+    .main-screen__btn-form {
+      display: block;
+      margin: auto;
+      padding: 18px 32px; } }
+
+.main-screen__btn-form span:last-child {
+  display: none; }
+  @media (max-width: 767px) {
+    .main-screen__btn-form span:last-child {
+      display: block; } }
+
+@media (max-width: 767px) {
+  .main-screen__btn-form span:first-child {
+    display: none; } }
 
 .main-screen__btn-scroll {
   position: absolute;
-  bottom: 19px;
+  bottom: 94px;
   left: -35px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);

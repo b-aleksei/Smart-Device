@@ -1,5 +1,7 @@
 .main-screen {
   position: relative;
+  flex-grow: 1;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   max-width: 1666px;
@@ -14,7 +16,20 @@
   }
 
   @media (max-width: $viewport--lg) {
+    overflow: hidden;
     padding-left: 88px;
+  }
+
+  @media (max-width: $viewport--md) {
+    padding: 0 15px 30px;
+
+    &::after {
+      content: url("../img/mobile/1motherboars@1x.png");
+      position: absolute;
+      top: 37px;
+      left: 50%;
+      margin-left: -134px;
+    }
   }
 }
 
@@ -27,11 +42,15 @@
     width: 430px;
     margin-right: auto;
   }
+
+  @media (max-width: $viewport--md) {
+    margin: auto;
+  }
 }
 
 .main-screen__bg {
   width: 755px;
-  padding-bottom: 33.35%;
+  height: 515px;
   background-image: url("../img/desktop/motherboars@1x.png"),
     url("../img/desktop/triangles.svg");
   background-size: contain, auto;
@@ -45,11 +64,10 @@
 
   @media (max-width: $viewport--lg) {
     position: absolute;
-    top: 50%;
+    top: 9px;
     left: 457px;
     width: 518px;
     height: 384px;
-    margin-top: -231px;
     background-image: url("../img/desktop/motherboars@1x.png"),
     url("../img/tablet/triangles.svg");
     background-size: 465px 340px, auto;
@@ -60,6 +78,17 @@
       background-image: url("../img/desktop/motherboars@2x.png"),
       url("../img/tablet/triangles.svg");
     }
+  }
+
+  @media (max-width: $viewport--md) {
+    top: 15px;
+    left: 167px;
+    width: 460px;
+    margin-top: 0;
+    background-image: url("../img/mobile/triangles.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 0 0;
   }
 }
 
@@ -78,8 +107,15 @@
     font-size: 60px;
     line-height: 70px;
     text-align: left;
-    margin-top: 115px;
-    margin-bottom: 29px;
+    margin: 115px 0 29px;
+  }
+
+  @media (max-width: $viewport--md) {
+    position: relative;
+    margin: 230px 0 27px;
+    font-size: 40px;
+    line-height: 47px;
+    z-index: 2;
   }
 }
 
@@ -112,6 +148,14 @@
       top: 16px;
     }
   }
+
+  @media (max-width: $viewport--md) {
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 51px;
+    padding-right: 0;
+    margin-bottom: 41px;
+  }
 }
 
 .main-screen__btn-form {
@@ -133,17 +177,37 @@
     margin-left: 51px;
     padding: 18px 31px;
   }
+
+  @media (max-width: $viewport--md) {
+    display: block;
+    margin: auto;
+    padding: 18px 32px;
+  }
+}
+
+.main-screen__btn-form span:last-child {
+  display: none;
+
+  @media (max-width: $viewport--md) {
+    display: block;
+  }
+}
+
+.main-screen__btn-form span:first-child {
+  @media (max-width: $viewport--md) {
+    display: none;
+  }
 }
 
 .main-screen__btn-scroll {
   position: absolute;
-  bottom: 19px;
+  bottom: 94px;
   left: -35px;
   transform: rotate(-90deg);
   font-size: 14px;
   color: rgba($color-default-white, 0.5);
 
   @media (max-width: $viewport--lg) {
-   display: none;
+    display: none;
   }
 }
