@@ -3,12 +3,13 @@
   max-width: 1514px;
   flex-wrap: wrap;
   align-items: center;
-  margin: auto;
+  margin: 0 auto 153px auto;
   padding: 33px 52px 0 50px;
   color: $color-default-white;
 
   @media (max-width: $viewport--lg) {
     padding: 21px 25px 0 25px;
+    margin-bottom: 0;
   }
 
   @media (max-width: $viewport--md) {
@@ -20,6 +21,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (max-width: $viewport--lg) {
+    margin-bottom: 0;
+  }
 }
 
 .nav__link--logo {
@@ -54,7 +59,7 @@
   border-top: 1px solid $color-default-white;
 
   @media (max-width: $viewport--lg) {
-    margin: 0 37px 28px 0;
+    margin: 0 37px 8px 0;
   }
 
   @media (max-width: $viewport--md) {

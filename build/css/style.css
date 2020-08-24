@@ -259,12 +259,13 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
+  margin: 0 auto 153px auto;
   padding: 33px 52px 0 50px;
   color: #ffffff; }
   @media (max-width: 1023px) {
     .nav {
-      padding: 21px 25px 0 25px; } }
+      padding: 21px 25px 0 25px;
+      margin-bottom: 0; } }
   @media (max-width: 767px) {
     .nav {
       padding: 17px 15px 0 17px; } }
@@ -277,6 +278,9 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 20px; }
+  @media (max-width: 1023px) {
+    .nav__link {
+      margin-bottom: 0; } }
 
 .nav__link--logo {
   min-width: 202px;
@@ -305,7 +309,7 @@ a {
   border-top: 1px solid #ffffff; }
   @media (max-width: 1023px) {
     .nav__decor {
-      margin: 0 37px 28px 0; } }
+      margin: 0 37px 8px 0; } }
   @media (max-width: 767px) {
     .nav__decor {
       margin: 0 27px 25px 0; } }
@@ -446,6 +450,110 @@ a {
   .nav__link span,
   .nav__btn {
     display: none; } }
+
+.main-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  max-width: 1666px;
+  padding: 0 0 30px 122px;
+  margin: auto;
+  color: #ffffff; }
+  @media (max-width: 1681px) {
+    .main-screen {
+      max-width: 1594px;
+      padding-left: 50px;
+      margin-left: auto; } }
+  @media (max-width: 1023px) {
+    .main-screen {
+      margin-top: -5px; } }
+
+.main-screen__wrap-content {
+  position: relative;
+  width: 718px;
+  margin-right: 71px; }
+  @media (max-width: 1023px) {
+    .main-screen__wrap-content {
+      width: 404px; } }
+
+.main-screen__bg {
+  width: 755px;
+  padding-bottom: 33.35%;
+  background-image: url("../img/desktop/motherboars@1x.png"), url("../img/triangles.svg");
+  background-size: contain, auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 center, 0 center; }
+  @media (max-width: 1309px) {
+    .main-screen__bg {
+      background-size: cover, cover; } }
+  @media (max-width: 1023px) {
+    .main-screen__bg {
+      width: 260px;
+      background-image: url("../img/tablet/motherboars@1x.png"), url("../img/triangles.svg"); } }
+
+.main-screen__wrap-content h2 {
+  margin-top: 57px;
+  margin-bottom: 27px;
+  text-align: center;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase; }
+  @media (max-width: 1023px) {
+    .main-screen__wrap-content h2 {
+      font-size: 60px;
+      line-height: 70px; } }
+
+.main-screen__wrap-content p {
+  position: relative;
+  padding-left: 98px;
+  margin-bottom: 44px;
+  font-size: 22px;
+  line-height: 34px; }
+  .main-screen__wrap-content p::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 4px;
+    width: 66px;
+    height: 2px;
+    background-color: #ffffff; }
+  @media (max-width: 1023px) {
+    .main-screen__wrap-content p {
+      font-size: 18px;
+      line-height: 28px;
+      padding-left: 48px; }
+      .main-screen__wrap-content p::before {
+        width: 33px; } }
+
+.main-screen__btn-form {
+  margin-left: 98px;
+  padding: 18px 45px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  border: 0;
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: #00b2ff;
+  color: inherit;
+  cursor: pointer; }
+
+.main-screen__btn-scroll {
+  position: absolute;
+  bottom: 19px;
+  left: -35px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5); }
 
 .info {
   display: -webkit-box;
@@ -608,7 +716,7 @@ a {
 
 .social-icon__link {
   position: relative;
-  display: inline-block;
+  display: block;
   color: #cdcdcd;
   -webkit-transition: 0.3s;
   transition: 0.3s; }
