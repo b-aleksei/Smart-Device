@@ -29,18 +29,17 @@
   }
 }
 
-.intro__height {
-  padding-bottom: 45.73%; // соотношение высоты к ширине bg
+.intro__wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 878px;
 
   @media (max-width: $viewport--lg) {
-    padding-bottom: 89.09%;
+    min-height: 686px;
   }
 
   @media (max-width: $viewport--md) {
-    padding-bottom: 202%;
+    min-height: 647px;
   }
-}
-
-.intro__wrap {
-  width: 100%;
 }

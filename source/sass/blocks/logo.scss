@@ -6,7 +6,7 @@
 }
 
 .logo--footer {
-  align-items: start;
+  align-items: flex-start;
 
   @media (max-width: $viewport--md) {
     margin-bottom: 7px;
