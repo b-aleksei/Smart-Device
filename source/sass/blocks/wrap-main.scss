@@ -1,5 +1,4 @@
 .wrap-main {
-  padding-bottom: 200px;
   background-image: url("../img/polygon3-round.svg");
   background-position: 58% 301px;
   background-repeat: no-repeat;
@@ -9,6 +8,6 @@
   }
 
   @media (max-width: $viewport--md) {
-    background-position: 153px 92.3%;
+    background-position: 153px 58.8%;
   }
 }
