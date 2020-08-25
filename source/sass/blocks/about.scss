@@ -1,3 +1,128 @@
 .about {
-  display: block;
+  margin-top: 85px;
+  padding: 0 25px;
+
+  @media (max-width: $viewport--lg) {
+    margin-top: 33px;
+  }
+
+  @media (max-width: $viewport--md) {
+    margin-top: 41px;
+    padding: 0 15px 0 17px;
+  }
+}
+
+.about__wrap {
+  display: flex;
+  width: 100%;
+  max-width: 1171px;
+  margin: auto;
+  padding-right: 5px;
+
+  @media (max-width: $viewport--md) {
+    padding-right: 0;
+  }
+}
+
+.about__bg-img {
+  flex-shrink: 0;
+  width: 116px;
+  height: 305px;
+  margin-right: 65px;
+  background-image: url("../img/desktop/mask@1x.png");
+  background-position: -30px -6px;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/desktop/mask@2x.png");
+  }
+
+  @media (max-width: $viewport--lg) {
+    width: 134px;
+    height: 350px;
+    margin-right: 53px;
+    background-image: url("../img/tablet/mask@1x.png");
+    background-position: -25px -9px;
+
+    @include retina {
+      background-image: url("../img/tablet/mask@2x.png");
+    }
+  }
+
+  @media (max-width: $viewport--md) {
+    display: none;
+  }
+}
+
+.about__content h2 {
+  margin-top: 0;
+  font-family: $font-roboto-condensed;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 30px;
+  color: $color-about-title;
+
+  @media (max-width: $viewport--lg) {
+    font-size: 32px;
+    margin-bottom: 33px;
+  }
+
+  @media (max-width: $viewport--md) {
+    font-size: 28px;
+    margin-bottom: 25px;
+    margin-left: -2px;
+  }
+}
+
+.about__content p {
+  line-height: 22px;
+  color: $color-about-title;
+
+  &:last-of-type {
+    margin-top: 22px;
+    margin-bottom: 39px;
+
+    @media (max-width: $viewport--lg) {
+      margin-top: 19px;
+      margin-bottom: 42px;
+
+      &::after {
+        content: "..";
+      }
+    }
+
+    @media (max-width: $viewport--md) {
+      margin-top: 39px;
+      margin-bottom: 30px;
+
+      &::after {
+        content: "..";
+      }
+    }
+  }
+}
+
+.about__content p:last-of-type span {
+  @media (max-width: $viewport--lg) {
+    display: none;
+  }
+}
+
+.about__content a {
+  display: inline-block;
+  min-width: 180px;
+  padding: 13px 30px;
+  font-family: $font-roboto-condensed;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid $color-blue;
+  border-radius: 5px;
+  color: $color-blue;
+
+  @include anim-shutter(out);
 }
