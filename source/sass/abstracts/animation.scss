@@ -86,6 +86,8 @@
 
   &:hover,
   &:focus {
+    color: $color-default-white;
+
     @if ($par == "in") {
       color: $color-blue;
     }
