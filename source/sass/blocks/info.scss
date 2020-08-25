@@ -59,7 +59,7 @@
   }
 
   &:active {
-    @include anim-push;
+    transform: scale(0.96);
   }
 }
 

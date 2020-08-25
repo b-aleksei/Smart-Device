@@ -121,7 +121,7 @@
   }
 
   &:active {
-    @include anim-push;
+    transform: scale(0.95);
   }
 
   &:hover svg,

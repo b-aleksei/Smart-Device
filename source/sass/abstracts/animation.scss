@@ -40,24 +40,6 @@
   }
 }
 
-
-@keyframes push {
-  50% {
-    transform: scale(0.9);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@mixin anim-push {
-  animation-name: push;
-  animation-duration: $default-transition;
-  animation-timing-function: ease-out;
-  animation-iteration-count: 1;
-}
-
 @mixin anim-buzz-out {
   animation-name: buzz-out;
   animation-duration: $default-transition;
@@ -94,7 +76,7 @@
     right: 0;
     background: $color-blue;
     transform: scaleX(0);
-    transition: transform $default-transition ease-out;
+    transition: $default-transition ease-out;
 
     @if ($par == "in") {
       transform: scaleX(1);
@@ -118,6 +100,6 @@
   }
 
   &:active {
-    @include anim-push;
+    transform: scale(0.97);
   }
 }

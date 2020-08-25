@@ -136,27 +136,10 @@ a {
     -webkit-transform: scale(1) translateX(-1px) rotate(0);
             transform: scale(1) translateX(-1px) rotate(0); } }
 
-@-webkit-keyframes push {
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes push {
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 65px;
   background-color: #000000;
   background-image: url("../img/desktop/bg-main@1x.jpg");
   background-repeat: no-repeat;
@@ -166,15 +149,13 @@ a {
       background-image: url("../img/desktop/bg-main@2x.jpg"); } }
   @media (max-width: 1023px) {
     .intro {
-      background-image: url("../img/tablet/bg-main@1x.jpg");
-      margin-bottom: 19px; } }
+      background-image: url("../img/tablet/bg-main@1x.jpg"); } }
   @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
     .intro {
       background-image: url("../img/tablet/bg-main@2x.jpg"); } }
   @media (max-width: 767px) {
     .intro {
-      background-image: url("../img/mobile/bg-main@1x.jpg");
-      margin-bottom: 46px; } }
+      background-image: url("../img/mobile/bg-main@1x.jpg"); } }
   @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
     .intro {
       background-image: url("../img/mobile/bg-main@2x.jpg"); } }
@@ -372,14 +353,8 @@ a {
     color: #00b2ff; }
   .nav__link--mail:active,
   .nav__link--phone:active {
-    -webkit-animation-name: push;
-            animation-name: push;
-    -webkit-animation-duration: 0.3s;
-            animation-duration: 0.3s;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1; }
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); }
   .nav__link--mail:hover svg,
   .nav__link--mail:focus svg,
   .nav__link--phone:hover svg,
@@ -432,22 +407,14 @@ a {
     background: #00b2ff;
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out; }
   .nav__btn:hover::before, .nav__btn:focus::before {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); }
   .nav__btn:active {
-    -webkit-animation-name: push;
-            animation-name: push;
-    -webkit-animation-duration: 0.3s;
-            animation-duration: 0.3s;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1; }
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97); }
 
 @media (max-width: 1023px) {
   .nav__link span,
@@ -488,6 +455,9 @@ a {
         top: 37px;
         left: 50%;
         margin-left: -134px; } }
+    @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+      .main-screen::after {
+        content: url("../img/mobile/motherboars@2x.png"); } }
 
 .main-screen__wrap-content {
   position: relative;
@@ -555,7 +525,7 @@ a {
   @media (max-width: 767px) {
     .main-screen__wrap-content h2 {
       position: relative;
-      margin: 230px 0 27px;
+      margin: 192px 0 27px;
       font-size: 40px;
       line-height: 47px;
       z-index: 2; } }
@@ -621,10 +591,8 @@ a {
     background: #00b2ff;
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
     border-radius: 5px; }
@@ -636,14 +604,8 @@ a {
       -webkit-transform: scaleX(0);
               transform: scaleX(0); }
   .main-screen__btn-form:active {
-    -webkit-animation-name: push;
-            animation-name: push;
-    -webkit-animation-duration: 0.3s;
-            animation-duration: 0.3s;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1; }
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97); }
   @media (max-width: 1023px) {
     .main-screen__btn-form {
       margin-left: 51px;
@@ -682,6 +644,180 @@ a {
   @media (max-width: 1023px) {
     .main-screen__btn-scroll {
       display: none; } }
+
+.wrap-main {
+  padding-bottom: 200px;
+  background-image: url("../img/polygon3-round.svg");
+  background-position: 58% 301px;
+  background-repeat: no-repeat; }
+  @media (max-width: 1023px) {
+    .wrap-main {
+      background-position: 483px 244px; } }
+  @media (max-width: 767px) {
+    .wrap-main {
+      background-position: 153px 92.3%; } }
+
+.advantages {
+  background-image: url("../img/polygon-left.svg"), url("../img/polygon-right.svg");
+  background-position: 11.9% 45px, 98.3% 90.3%;
+  background-repeat: no-repeat, no-repeat; }
+  @media (max-width: 1023px) {
+    .advantages {
+      background-image: none; } }
+
+.advantages__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  max-width: 1220px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  padding: 112px 25px 0;
+  list-style: none; }
+  @media (max-width: 1023px) {
+    .advantages__list {
+      padding-top: 54px; }
+      .advantages__list::before, .advantages__list::after {
+        display: none; } }
+  @media (max-width: 767px) {
+    .advantages__list {
+      padding: 37px 16px 0 14px; } }
+
+.advantages__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(50% - 15px);
+  margin-bottom: 30px; }
+  @media (max-width: 767px) {
+    .advantages__item {
+      width: 100%;
+      margin-bottom: 20px; } }
+
+.advantages__link {
+  display: block;
+  width: 100%;
+  padding: 0 42px;
+  border: 1px solid #ebebeb;
+  border-left: 3px solid #00b2ff;
+  background-color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .advantages__link:hover, .advantages__link:focus {
+    background-color: #00b2ff;
+    border-color: #00b2ff;
+    color: #ffffff; }
+    .advantages__link:hover h3,
+    .advantages__link:hover svg, .advantages__link:focus h3,
+    .advantages__link:focus svg {
+      color: #ffffff; }
+  .advantages__link:active {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97); }
+  @media (max-width: 1023px) {
+    .advantages__link {
+      padding: 0 21px 0 24px; } }
+  @media (max-width: 767px) {
+    .advantages__link {
+      padding-left: 25px;
+      border-left-width: 2px; } }
+
+@media (max-width: 767px) {
+  .advantages__link--hired {
+    padding-right: 12px; } }
+
+.advantages__link svg {
+  display: block;
+  margin-top: 40px;
+  color: #00b2ff; }
+  @media (max-width: 1023px) {
+    .advantages__link svg {
+      margin-top: 23px;
+      width: 32px; } }
+
+.advantages__link--secure svg {
+  margin-top: 43px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  @media (max-width: 1023px) {
+    .advantages__link--secure svg {
+      margin-top: 23px; } }
+
+.advantages__link span {
+  display: inline-block; }
+  @media (max-width: 1023px) {
+    .advantages__link span {
+      display: none; } }
+
+.advantages__link h3 {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  color: #00b2ff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  @media (max-width: 1023px) {
+    .advantages__link h3 {
+      margin-top: 7px;
+      margin-bottom: 0; } }
+  @media (max-width: 767px) {
+    .advantages__link h3 {
+      margin-top: 13px;
+      font-size: 20px;
+      line-height: 28px; } }
+
+.advantages__link p {
+  margin-bottom: 66px;
+  font-size: 16px;
+  line-height: 21.5px; }
+  @media (max-width: 1023px) {
+    .advantages__link p {
+      margin-top: 10px;
+      margin-bottom: 23px; } }
+  @media (max-width: 767px) {
+    .advantages__link p {
+      margin-bottom: 27px; } }
+
+@media (max-width: 1023px) {
+  .advantages__link--secure p {
+    margin-top: 17px; } }
+
+@media (max-width: 767px) {
+  .advantages__link--secure p {
+    margin-top: -7px; } }
+
+@media (max-width: 767px) {
+  .advantages__link--secure h3 {
+    margin-top: 10px; } }
+
+.advantages__item:nth-child(n + 3) p {
+  margin-bottom: 87px; }
+  @media (max-width: 1023px) {
+    .advantages__item:nth-child(n + 3) p {
+      margin-bottom: 35px; } }
+  @media (max-width: 767px) {
+    .advantages__item:nth-child(n + 3) p {
+      margin-bottom: 53px; } }
+
+@media (max-width: 767px) {
+  .advantages__item:last-child h3 {
+    margin-top: 9px;
+    margin-bottom: 12px; } }
+
+@media (max-width: 767px) {
+  .advantages__item:last-child p {
+    margin-bottom: 27px; } }
+
+.about {
+  display: block; }
 
 .info {
   display: -webkit-box;
@@ -741,14 +877,8 @@ a {
   .info__list a:hover, .info__list a:focus {
     color: #00b2ff; }
   .info__list a:active {
-    -webkit-animation-name: push;
-            animation-name: push;
-    -webkit-animation-duration: 0.3s;
-            animation-duration: 0.3s;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1; }
+    -webkit-transform: scale(0.96);
+            transform: scale(0.96); }
 
 .info__item--media {
   display: -webkit-box;
