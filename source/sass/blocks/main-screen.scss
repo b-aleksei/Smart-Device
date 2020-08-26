@@ -214,6 +214,22 @@
   color: rgba($color-default-white, 0.5);
   transition: $default-transition;
 
+  @include icon-hang;
+
+  &::before {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: -10px;
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid $color-default-white;
+    border-left: 1px solid $color-default-white;
+    transform: rotate(45deg);
+    z-index: 2;
+  }
+
   &:hover,
   &:focus {
     color: $color-blue;
