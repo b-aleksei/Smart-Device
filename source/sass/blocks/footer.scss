@@ -1,5 +1,13 @@
 .footer {
   padding-top: 65px;
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 18px;
+  }
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 46px;
+  }
 }
 
 .footer__wrap-copyright {

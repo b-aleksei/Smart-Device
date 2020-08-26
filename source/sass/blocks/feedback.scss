@@ -2,18 +2,23 @@
   padding: 61px 0 0 0;
   background-color: $color-blue;
   color: $color-default-white;
-  background-image: url("../img/tablet/triangles.svg"),
-  url("../img/triangle-left.svg"),
-  url("../img/triangle-right.svg");
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  //background-position: 350px 161px, 196px 94px, 1642px 92px, 1717px 288px;
-  //background-position: 24.9% 161px, 15% 94px, 94.3% 92px, 104.7% 288px;
-  background-position: 15% 94px, 1642px 92px, 1717px 288px;
-  background-size: 611px, auto, auto;
-}
+  background-image: url("../img/triangle-left.svg"),
+    url("../img/triangle-right.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 94.3% 92px, 104.7% 288px;
 
-.feedback__overlay {
-  display: flex;
+  @media (max-width: 1273px) {
+    background-position: 98% 92px, 112% 288px;
+  }
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 53px;
+    background-image: none;
+  }
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 6px;
+  }
 }
 
 .feedback__wrap {
@@ -21,16 +26,37 @@
   width: 670px;
   padding: 0 50px;
   margin-left: auto;
-  //margin-right: 16.9%;
-  margin-right: calc(50% - 643px);
+  margin-right: 16.9%;
 
   &::before {
-    content: url(../img/desktop/airplane@1x.png);
+    content: "";
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 615px;
-    height: 288px;
+    top: 2px;
+    left: -760px;
+    width: 700px;
+    height: 488px;
+    background-image: url(../img/desktop/airplane@1x.png),
+      url("../img/tablet/triangles.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: 184px 67px, 30px 1px;
+    background-size: auto, 611px;
+    pointer-events: none;
+
+    @media (max-width: $viewport--lg) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $viewport--lg) {
+    width: 694px;
+    padding-left: 53px;
+    margin-right: auto;
+  }
+
+  @media (max-width: $viewport--md) {
+    padding: 0 15px;
+    width: 100%;
+    max-width: 490px;
   }
 }
 
@@ -41,13 +67,43 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
+
+  @media (max-width: $viewport--lg) {
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  @media (max-width: $viewport--md) {
+    font-size: 28px;
+    margin-left: 1px;
+    line-height: 39px;
+  }
 }
 
 .feedback__wrap p {
   margin-top: 10px;
+
+  @media (max-width: $viewport--lg) {
+    margin-top: 17px;
+    margin-bottom: 54px;
+  }
+
+  @media (max-width: $viewport--md) {
+    margin-top: 15px;
+    margin-bottom: 24px;
+  }
 }
 
 .feedback__form {
   margin-top: 51px;
-  margin-bottom: 112px;
+  padding-bottom: 112px;
+
+  @media (max-width: $viewport--lg) {
+    padding-bottom: 105px;
+  }
+
+  @media (max-width: $viewport--md) {
+    margin-top: 0;
+    padding-bottom: 43px;
+  }
 }
