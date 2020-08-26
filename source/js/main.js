@@ -1,1 +1,1 @@
-// import './modules/menu';
+import './modules/validate';

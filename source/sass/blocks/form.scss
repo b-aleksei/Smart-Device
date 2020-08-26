@@ -25,7 +25,6 @@
   width: 100%;
   background-color: rgba($color-default-white, 0.1);
   border: none;
-  padding-left: 17px;
   color: $color-default-white;
   font-family: $font-default;
   font-size: 16px;
@@ -39,6 +38,7 @@
 
 .form__input input {
   height: 50px;
+  padding: 0 17px;
 
   @media (max-width: $viewport--md) {
     height: 52px;
@@ -51,11 +51,11 @@
 
 .form__comment textarea {
   display: block;
+  padding: 13px 10px 0 17px;
   height: 154px;
-  padding-top: 13px;
   margin-bottom: 41px;
   resize: none;
-  //overflow-y: scroll;
+
   @media (max-width: $viewport--lg) {
     height: 160px;
   }

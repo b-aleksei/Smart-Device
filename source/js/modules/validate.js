@@ -5,6 +5,11 @@ const phoneInput = document.querySelector('input[name=phone]');
 const regExpName = /^[\s-]+$|^\s*-+|[^A-Za-zА-Яа-я\-.\s']+/;
 const forms = document.querySelectorAll('form');
 
+const openModal = document.querySelector('.nav__btn');
+openModal.addEventListener('click', function () {
+  focusTrapOne.activate(); // вызов модального окна
+});
+
 const signSuccess = '' +
 '<span class="form__input-valid">' +
   '<svg width="20" height="18">' +
@@ -65,7 +70,6 @@ const onSubmit = function (e) {
       input.parentElement.classList.remove('form__valid');
     }
   });
-  focusTrapOne.activate(); // вызов модального окна
   setTimeout(() => form.reset());
 };
 
