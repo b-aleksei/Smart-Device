@@ -1,0 +1,53 @@
+.feedback {
+  padding: 61px 0 0 0;
+  background-color: $color-blue;
+  color: $color-default-white;
+  background-image: url("../img/tablet/triangles.svg"),
+  url("../img/triangle-left.svg"),
+  url("../img/triangle-right.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  //background-position: 350px 161px, 196px 94px, 1642px 92px, 1717px 288px;
+  //background-position: 24.9% 161px, 15% 94px, 94.3% 92px, 104.7% 288px;
+  background-position: 15% 94px, 1642px 92px, 1717px 288px;
+  background-size: 611px, auto, auto;
+}
+
+.feedback__overlay {
+  display: flex;
+}
+
+.feedback__wrap {
+  position: relative;
+  width: 670px;
+  padding: 0 50px;
+  margin-left: auto;
+  //margin-right: 16.9%;
+  margin-right: calc(50% - 643px);
+
+  &::before {
+    content: url(../img/desktop/airplane@1x.png);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 615px;
+    height: 288px;
+  }
+}
+
+.feedback__wrap > h2 {
+  margin-bottom: 0;
+  margin-left: -4px;
+  font-family: $font-roboto-condensed;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+.feedback__wrap p {
+  margin-top: 10px;
+}
+
+.feedback__form {
+  margin-top: 51px;
+  margin-bottom: 112px;
+}
