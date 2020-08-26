@@ -1,0 +1,145 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__input {
+  width: 270px;
+  margin-bottom: 39px;
+
+  @media (max-width: $viewport--lg) {
+    width: 279px;
+    margin-bottom: 42px;
+  }
+
+  @media (max-width: $viewport--md) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.form__input input,
+.form__comment textarea {
+  width: 100%;
+  background-color: rgba($color-default-white, 0.1);
+  border: none;
+  padding-left: 17px;
+  color: $color-default-white;
+  font-family: $font-default;
+  font-size: 16px;
+
+  &::placeholder {
+    color: $color-default-white;
+    font-family: $font-default;
+    font-size: 16px;
+  }
+}
+
+.form__input input {
+  height: 50px;
+
+  @media (max-width: $viewport--md) {
+    height: 52px;
+  }
+}
+
+.form__comment {
+  width: 100%;
+}
+
+.form__comment textarea {
+  display: block;
+  height: 154px;
+  padding-top: 13px;
+  margin-bottom: 41px;
+  resize: none;
+  //overflow-y: scroll;
+  @media (max-width: $viewport--lg) {
+    height: 160px;
+  }
+
+  @media (max-width: $viewport--md) {
+    height: 104px;
+    margin-bottom: 30px;
+  }
+}
+
+.form button {
+  min-width: 270px;
+  padding: 14px 20px;
+  font-family: $font-roboto-condensed;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  border-radius: 5px;
+  border: 1px solid $color-default-white;
+  background-color: $color-default-white;
+  color: $color-default-white;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include anim-shutter(in);
+
+  @media (max-width: $viewport--lg) {
+    min-width: 281px;
+  }
+
+  @media (max-width: $viewport--md) {
+    min-width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+.form__input-consent {
+  width: 263px;
+
+  @media (max-width: $viewport--lg) {
+    width: 270px;
+    padding-top: 5px;
+  }
+}
+
+.form__input-consent input {
+  display: none;
+
+  &:checked + label::after {
+    opacity: 0;
+  }
+}
+
+.form__input-consent label {
+  display: block;
+  position: relative;
+  padding-left: 32px;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba($color-default-white, 0.8);
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-default-white;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 7px;
+    height: 5px;
+    border-bottom: 1px solid $color-default-white;
+    border-left: 1px solid $color-default-white;
+    transform: rotate(-45deg);
+    opacity: 1;
+    transition: opacity $default-transition;
+  }
+}

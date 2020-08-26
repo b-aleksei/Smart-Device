@@ -1,0 +1,109 @@
+.feedback {
+  padding: 61px 0 0 0;
+  background-color: $color-blue;
+  color: $color-default-white;
+  background-image: url("../img/triangle-left.svg"),
+    url("../img/triangle-right.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 94.3% 92px, 104.7% 288px;
+
+  @media (max-width: 1273px) {
+    background-position: 98% 92px, 112% 288px;
+  }
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 53px;
+    background-image: none;
+  }
+
+  @media (max-width: $viewport--lg) {
+    padding-top: 6px;
+  }
+}
+
+.feedback__wrap {
+  position: relative;
+  width: 670px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: 16.9%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -760px;
+    width: 700px;
+    height: 488px;
+    background-image: url(../img/desktop/airplane@1x.png),
+      url("../img/tablet/triangles.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: 184px 67px, 30px 1px;
+    background-size: auto, 611px;
+    pointer-events: none;
+
+    @media (max-width: $viewport--lg) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $viewport--lg) {
+    width: 694px;
+    padding-left: 53px;
+    margin-right: auto;
+  }
+
+  @media (max-width: $viewport--md) {
+    padding: 0 15px;
+    width: 100%;
+    max-width: 490px;
+  }
+}
+
+.feedback__wrap > h2 {
+  margin-bottom: 0;
+  margin-left: -4px;
+  font-family: $font-roboto-condensed;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+
+  @media (max-width: $viewport--lg) {
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  @media (max-width: $viewport--md) {
+    font-size: 28px;
+    margin-left: 1px;
+    line-height: 39px;
+  }
+}
+
+.feedback__wrap p {
+  margin-top: 10px;
+
+  @media (max-width: $viewport--lg) {
+    margin-top: 17px;
+    margin-bottom: 54px;
+  }
+
+  @media (max-width: $viewport--md) {
+    margin-top: 15px;
+    margin-bottom: 24px;
+  }
+}
+
+.feedback__form {
+  margin-top: 51px;
+  padding-bottom: 112px;
+
+  @media (max-width: $viewport--lg) {
+    padding-bottom: 105px;
+  }
+
+  @media (max-width: $viewport--md) {
+    margin-top: 0;
+    padding-bottom: 43px;
+  }
+}
