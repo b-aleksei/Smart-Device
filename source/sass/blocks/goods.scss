@@ -88,6 +88,8 @@
   display: block;
   height: 100%;
 
+  @include icon-wobble-horizontal;
+
   &:hover,
   &:focus {
     box-shadow: 0 0 10px $color-blue;
@@ -105,18 +107,6 @@
   background-color: $color-goods-fallback;
   overflow: hidden;
   z-index: 0;
-}
-
-.goods__subject--production {
-  @media (max-width: $viewport--lg) {
-    //background-image: url("../img/tablet/goods1@1x.png");
-  }
-}
-
-.goods__subject--production img {
-  @media (max-width: $viewport--lg) {
-    //display: none;
-  }
 }
 
 .goods__link img {
