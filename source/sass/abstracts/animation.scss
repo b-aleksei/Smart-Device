@@ -1,3 +1,21 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(2000px);
+  }
+
+  70% {
+    transform: translateY(-30px);
+  }
+
+  90% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes icon-hang {
   0% {
     transform: translateX(0) rotate(45deg);
@@ -85,7 +103,7 @@
   animation-name: buzz-out;
   animation-duration: $default-transition;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
 }
 
 @mixin anim-underline-from-center {

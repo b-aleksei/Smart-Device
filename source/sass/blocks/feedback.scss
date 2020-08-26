@@ -3,7 +3,7 @@
   background-color: $color-blue;
   color: $color-default-white;
   background-image: url("../img/triangle-left.svg"),
-    url("../img/triangle-right.svg");
+  url("../img/triangle-right.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: 94.3% 92px, 104.7% 288px;
 
@@ -36,7 +36,7 @@
     width: 700px;
     height: 488px;
     background-image: url("../img/desktop/airplane@1x.png"),
-      url("../img/tablet/triangles.svg");
+    url("../img/tablet/triangles.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: 184px 67px, 30px 1px;
     background-size: auto, 611px;
@@ -107,3 +107,40 @@
     padding-bottom: 43px;
   }
 }
+
+//=====================
+.feedback__overlay.js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: $color-overlay;
+  overflow-y: scroll;
+  z-index: 100;
+  animation: bounce 0.6s;
+}
+
+.js .feedback__wrap {
+  margin: auto;
+  padding: 0 39px;
+  width: 490px;
+  height: 605px;
+  background-color: $color-blue;
+
+  &::before {
+    display: none;
+  }
+}
+
+.js h2 {
+  font-size: 28px;
+  line-height: 39px;
+}
+
+.js .form__input {
+  width: 100%;
+}
+
+//=====================
