@@ -1,3 +1,6 @@
+const ua = window.navigator.userAgent.toLowerCase();
+const isIe = (/trident/gi).test(ua) || (/msie/gi).test(ua);
+
 const goToTarget = function (target) { // фолбэк для ie11
   const y = target.offsetTop;
 
@@ -18,25 +21,20 @@ const makeSmoothScroll = function (link) {
 
     let targetId = link.getAttribute('href');
     let target = document.querySelector(targetId);
-
-
-    try {
-      if (target) {
-
-        if (!Promise) { // примитивная проверка для ie 11
-          goToTarget(target);
-        } else {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
+    if (target) {
+      if (isIe) { // примитивная проверка для ie 11
+        goToTarget(target);
+      } else {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
       }
-    } catch (er) {
-      // console.log(er);
     }
   });
 };
 
-const links = document.querySelectorAll('.nav__link');
-links.forEach((link) => makeSmoothScroll(link));
+const links = document.querySelectorAll('.main-screen__wrap-content a');
+if (links.length) {
+  links.forEach((link) => makeSmoothScroll(link));
+}

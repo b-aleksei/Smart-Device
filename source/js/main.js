@@ -1,2 +1,3 @@
 import './modules/validate';
-import './helpers/modal';
+import './modules/form';
+import './modules/scroll';
