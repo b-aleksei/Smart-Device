@@ -19,6 +19,10 @@
   max-width: 1230px;
   padding-left: 30px;
   margin: auto;
+
+  @media (max-width: $viewport--lg) {
+    padding: 0;
+  }
 }
 
 .goods h2 {

@@ -25,7 +25,6 @@ const initModal = function () {
 
 const deactivateForm = function () {
   focusTrapOne.deactivate();
-  btnClose.removeEventListener('click', deactivateForm);
 };
 
 const returnInitialValue = function () {
@@ -58,8 +57,10 @@ let focusTrapOne = createFocusTrap(container, {
   },
 });
 
-openForm.addEventListener('click', function () {
-  focusTrapOne.activate();
-});
+if (openForm) {
+  openForm.addEventListener('click', function () {
+    focusTrapOne.activate();
+  });
+}
 
 export {deactivateForm};

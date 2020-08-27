@@ -1,7 +1,7 @@
 import onFocusPhoneInput from '../helpers/phoneMask';
 import checkValue from '../helpers/checkValidity';
 import modal from '../helpers/modal';
-import {deactivateForm} from '../modules/form';
+import {deactivateForm} from './form';
 
 const overlay = document.querySelector('.feedback__overlay');
 const forms = document.querySelectorAll('form');
@@ -32,10 +32,11 @@ const onSubmit = function (e) {
   }
 
   if (overlay.classList.contains('js')) {
-    console.log('contains js');
     deactivateForm();
+    setTimeout(() => modal.activate());
+  } else {
+    modal.activate();
   }
-  modal.activate(); // вызов модального окна
   setTimeout(() => form.reset());
 };
 
