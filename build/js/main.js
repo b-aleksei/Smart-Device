@@ -86,6 +86,42 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./js/helpers/checkValidity.js":
+/*!*************************************!*\
+  !*** ./js/helpers/checkValidity.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar regExpName = /^[\\s-]+$|^\\s*-+|[^A-Za-zА-Яа-я\\-.\\s']+/;\nvar template = document.querySelector('template');\nvar errorMes = template.content.querySelector('#tmp5').textContent;\n\nvar checkValidity = function checkValidity(input) {\n  if (!input.validity.valid) {\n    input.parentElement.classList.remove('form__valid');\n    input.parentElement.classList.add('form__invalid');\n  } else {\n    input.parentElement.classList.remove('form__invalid');\n    input.parentElement.classList.add('form__valid');\n  }\n};\n\nvar checkValue = function checkValue(input) {\n  input.setCustomValidity('');\n\n  if (input.name === 'name') {\n    if (regExpName.test(input.value)) {\n      input.setCustomValidity(errorMes);\n    }\n  }\n\n  if (input.name === 'phone') {\n    var phoneLength = input.value.replace(/\\D/g, '').length;\n    var messageError = 'Длина номера менее 11 цифр, сейчас: ' + phoneLength;\n\n    if (phoneLength < 11) {\n      input.setCustomValidity(messageError);\n    }\n  }\n\n  checkValidity(input);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (checkValue);\n\n//# sourceURL=webpack:///./js/helpers/checkValidity.js?");
+
+/***/ }),
+
+/***/ "./js/helpers/modal.js":
+/*!*****************************!*\
+  !*** ./js/helpers/modal.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vendor/focus-trap.min */ \"./js/vendor/focus-trap.min.js\");\n/* harmony import */ var _vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0__);\n\nvar openForm = document.querySelector('.nav__btn');\nvar overlay = document.querySelector('.feedback__overlay');\nvar container = overlay.querySelector('.feedback__wrap');\nvar inputName = container.querySelector('input[name=name]');\nvar inputPhone = container.querySelector('input[name=phone]');\nvar btnClose = container.querySelector('.feedback__btn');\nvar modalTitle = container.querySelector('h2');\nvar modalText = container.querySelector('p');\nvar modalBtn = container.querySelector('button');\nvar modalTitleInitialValue = modalTitle.textContent;\nvar modalTextInitialValue = modalText.textContent;\nvar modalBtnInitialValue = modalBtn.textContent;\nvar body = document.body;\n\nvar initModal = function initModal() {\n  var template = document.querySelector('template').content;\n  var templateTitle = template.querySelector('#tmp1').textContent;\n  var templateText = template.querySelector('#tmp2').textContent;\n  var templateButton = template.querySelector('#tmp3').textContent;\n  modalTitle.textContent = templateTitle;\n  modalText.textContent = templateText;\n  modalBtn.textContent = templateButton;\n};\n\nvar deactivateModal = function deactivateModal() {\n  focusTrapOne.deactivate();\n  modalBtn.removeEventListener('click', deactivateModal);\n  btnClose.removeEventListener('click', deactivateModal);\n};\n\nvar returnInitialValue = function returnInitialValue() {\n  modalTitle.textContent = modalTitleInitialValue;\n  modalText.textContent = modalTextInitialValue;\n  modalBtn.textContent = modalBtnInitialValue;\n};\n\nvar focusTrapOne = _vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0___default()(container, {\n  initialFocus: inputName,\n  fallbackFocus: inputPhone,\n  escapeDeactivates: true,\n  clickOutsideDeactivates: true,\n  onActivate: function onActivate() {\n    initModal();\n    overlay.classList.add('js'); //  для предотвращения скрола\n\n    body.dataset.scrollY = self.pageYOffset;\n    body.style.top = \"-\".concat(body.dataset.scrollY, \"px\");\n    body.classList.add('body-lock');\n    btnClose.addEventListener('click', deactivateModal);\n    modalBtn.addEventListener('click', deactivateModal);\n  },\n  onDeactivate: function onDeactivate() {\n    body.classList.remove('body-lock');\n    window.scrollTo(0, body.dataset.scrollY);\n    overlay.classList.remove('js');\n    returnInitialValue();\n  }\n});\nopenForm.addEventListener('click', function () {\n  focusTrapOne.activate();\n});\n\n//# sourceURL=webpack:///./js/helpers/modal.js?");
+
+/***/ }),
+
+/***/ "./js/helpers/phoneMask.js":
+/*!*********************************!*\
+  !*** ./js/helpers/phoneMask.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _checkValidity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./checkValidity */ \"./js/helpers/checkValidity.js\");\n\nvar COUNTRY_CODE = '+7';\n\nvar onInputPhoneInput = function onInputPhoneInput(_ref) {\n  var target = _ref.target;\n  var matrix = \"\".concat(COUNTRY_CODE, \" (___) ___ __ __\");\n  var def = matrix.replace(/\\D/g, '');\n  var i = 0;\n  var val = target.value.replace(/\\D/g, '');\n\n  if (!val.length) {\n    val = def;\n  }\n\n  target.value = '';\n  Array.prototype.forEach.call(matrix, function (item) {\n    var isValNumber = /[_\\d]/.test(item) && val.length > i;\n\n    if (isValNumber) {\n      target.value += val.charAt(i++);\n    } else {\n      target.value += val.length <= i ? '' : item;\n    }\n  });\n  Object(_checkValidity__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(target);\n};\n\nvar onFocusPhoneInput = function onFocusPhoneInput(_ref2) {\n  var target = _ref2.target;\n\n  if (!target.value) {\n    target.value = COUNTRY_CODE;\n  }\n\n  target.addEventListener('input', onInputPhoneInput);\n  target.addEventListener('blur', onBlurPhoneInput);\n};\n\nvar onBlurPhoneInput = function onBlurPhoneInput(_ref3) {\n  var target = _ref3.target;\n\n  if (target.value === COUNTRY_CODE) {\n    target.value = '';\n  }\n\n  target.removeEventListener('input', onInputPhoneInput);\n  target.removeEventListener('blur', onBlurPhoneInput);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (onFocusPhoneInput);\n\n//# sourceURL=webpack:///./js/helpers/phoneMask.js?");
+
+/***/ }),
+
 /***/ "./js/main.js":
 /*!********************!*\
   !*** ./js/main.js ***!
@@ -94,31 +130,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_validate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/validate */ \"./js/modules/validate.js\");\n\n\n//# sourceURL=webpack:///./js/main.js?");
-
-/***/ }),
-
-/***/ "./js/modules/modal.js":
-/*!*****************************!*\
-  !*** ./js/modules/modal.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vendor/focus-trap.min */ \"./js/vendor/focus-trap.min.js\");\n/* harmony import */ var _vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0__);\n\nvar overlay = document.querySelector('.feedback__overlay');\nvar container = overlay.querySelector('.feedback__wrap');\nvar inputName = container.querySelector('input[name=name]');\nvar inputPhone = container.querySelector('input[name=phone]'); // let btnClose = document.querySelector('.modal__close');\n\nvar body = document.body;\nvar focusTrapOne = _vendor_focus_trap_min__WEBPACK_IMPORTED_MODULE_0___default()(container, {\n  initialFocus: inputName,\n  fallbackFocus: inputPhone,\n  escapeDeactivates: true,\n  // clickOutsideDeactivates: true,\n  onActivate: function onActivate() {\n    overlay.classList.add('js'); //  для предотвращения скрола\n\n    body.dataset.scrollY = self.pageYOffset;\n    body.style.top = \"-\".concat(body.dataset.scrollY, \"px\");\n    body.classList.add('body-lock');\n    /*    btnClose.addEventListener('click', function () {\n      focusTrapOne.deactivate();\n    }, {once: true});*/\n  },\n  onDeactivate: function onDeactivate() {\n    body.classList.remove('body-lock');\n    window.scrollTo(0, body.dataset.scrollY);\n    overlay.classList.remove('js');\n  }\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (focusTrapOne);\n\n//# sourceURL=webpack:///./js/modules/modal.js?");
-
-/***/ }),
-
-/***/ "./js/modules/phoneMask.js":
-/*!*********************************!*\
-  !*** ./js/modules/phoneMask.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar COUNTRY_CODE = '+7';\n\nvar onInputPhoneInput = function onInputPhoneInput(_ref) {\n  var target = _ref.target;\n  var matrix = \"\".concat(COUNTRY_CODE, \" (___) ___ __ __\");\n  var def = matrix.replace(/\\D/g, '');\n  var i = 0;\n  var val = target.value.replace(/\\D/g, '');\n\n  if (!val.length) {\n    val = def;\n  }\n\n  target.value = '';\n  Array.from(matrix).forEach(function (item) {\n    var isValNumber = /[_\\d]/.test(item) && val.length > i;\n\n    if (isValNumber) {\n      target.value += val.charAt(i++);\n    } else {\n      target.value += val.length <= i ? '' : item;\n    }\n  });\n};\n\nvar onFocusPhoneInput = function onFocusPhoneInput(_ref2) {\n  var target = _ref2.target;\n\n  if (!target.value) {\n    target.value = COUNTRY_CODE;\n  }\n\n  target.addEventListener('input', onInputPhoneInput);\n  target.addEventListener('blur', onBlurPhoneInput);\n};\n\nvar onBlurPhoneInput = function onBlurPhoneInput(_ref3) {\n  var target = _ref3.target;\n\n  if (target.value === COUNTRY_CODE) {\n    target.value = '';\n  }\n\n  target.removeEventListener('input', onInputPhoneInput);\n  target.removeEventListener('blur', onBlurPhoneInput);\n};\n\nvar initPhoneMask = function initPhoneMask(input) {\n  input.addEventListener('focus', onFocusPhoneInput);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (initPhoneMask);\n\n//# sourceURL=webpack:///./js/modules/phoneMask.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_validate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/validate */ \"./js/modules/validate.js\");\n/* harmony import */ var _helpers_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/modal */ \"./js/helpers/modal.js\");\n\n\n\n//# sourceURL=webpack:///./js/main.js?");
 
 /***/ }),
 
@@ -130,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nvar COUNTRY_CODE = '+7';\n\nv
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _phoneMask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./phoneMask */ \"./js/modules/phoneMask.js\");\n/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ \"./js/modules/modal.js\");\n\n\nvar phoneInput = document.querySelector('input[name=phone]');\nvar regExpName = /^[\\s-]+$|^\\s*-+|[^A-Za-zА-Яа-я\\-.\\s']+/;\nvar forms = document.querySelectorAll('form');\nvar openModal = document.querySelector('.nav__btn');\nopenModal.addEventListener('click', function () {\n  _modal__WEBPACK_IMPORTED_MODULE_1__[\"default\"].activate(); // вызов модального окна\n});\nvar signSuccess = '' + '<span class=\"form__input-valid\">' + '<svg width=\"20\" height=\"18\">' + '<use href=\"#tick\"></use>' + '</svg>' + '</span>';\n\nvar checkValue = function checkValue(e) {\n  var input = e.currentTarget;\n  input.setCustomValidity('');\n\n  if (input.name === 'name') {\n    if (regExpName.test(input.value)) {\n      input.setCustomValidity('Вы ввели недопустимый символ');\n    }\n  }\n\n  if (input.name === 'phone') {\n    var phoneLength = input.value.replace(/\\D/g, '').length;\n    var messageError = 'Длина номера менее 11 цифр, сейчас: ' + phoneLength;\n\n    if (phoneLength < 11) {\n      input.setCustomValidity(messageError);\n    }\n  }\n\n  checkValidity(input);\n};\n\nvar checkValidity = function checkValidity(input) {\n  if (!input.validity.valid) {\n    input.parentElement.classList.remove('form__valid');\n    input.parentElement.classList.add('form__invalid');\n  } else {\n    input.parentElement.classList.remove('form__invalid');\n    input.parentElement.classList.add('form__valid');\n  }\n}; // обработчик события focus на form\n\n\nvar onValidate = function onValidate(e) {\n  if (e.target.dataset.validate) {\n    e.target.addEventListener('input', checkValue);\n  }\n\n  e.currentTarget.addEventListener('focusout', deleteHandler);\n};\n\nvar deleteHandler = function deleteHandler(e) {\n  if (e.target.dataset.validate) {\n    e.target.removeEventListener('input', checkValue);\n  }\n\n  e.currentTarget.removeEventListener('focusout', deleteHandler);\n};\n\nvar onSubmit = function onSubmit(e) {\n  e.preventDefault();\n  var form = e.currentTarget;\n  Array.prototype.forEach.call(form.elements, function (input) {\n    if (input.dataset.validate) {\n      localStorage.setItem(input.name, input.value);\n      input.parentElement.classList.remove('form__valid');\n    }\n  });\n  setTimeout(function () {\n    return form.reset();\n  });\n};\n\ntry {\n  // валидация форм на главной странице\n  forms.forEach(function (form) {\n    Array.prototype.forEach.call(form.elements, function (input) {\n      if (input.dataset.validate) {\n        var value = localStorage.getItem(input.name);\n\n        if (value) {\n          input.value = value;\n        }\n\n        input.parentElement.insertAdjacentHTML('afterbegin', signSuccess); // добавляет зеленую галочку если валидно\n      }\n    });\n    Object(_phoneMask__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(phoneInput);\n    form.addEventListener('focusin', onValidate);\n    form.addEventListener('submit', onSubmit);\n  });\n} catch (e) {// console.log(e);\n}\n\n//# sourceURL=webpack:///./js/modules/validate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers_phoneMask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/phoneMask */ \"./js/helpers/phoneMask.js\");\n/* harmony import */ var _helpers_checkValidity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/checkValidity */ \"./js/helpers/checkValidity.js\");\n\n\nvar forms = document.querySelectorAll('form');\nvar template = document.querySelector('template');\nvar signSuccess = template.content.querySelector('#tmp4');\n\nvar initValidation = function initValidation(input) {\n  if (input.name === 'phone') {\n    input.addEventListener('focus', _helpers_phoneMask__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n  }\n\n  if (input.name === 'name') {\n    input.addEventListener('input', function (_ref) {\n      var target = _ref.target;\n      Object(_helpers_checkValidity__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(target);\n    });\n  }\n};\n\nvar onSubmit = function onSubmit(e) {\n  e.preventDefault();\n  var form = e.currentTarget;\n  var inputs = form.querySelectorAll('input[data-validate]');\n\n  if (inputs.length) {\n    inputs.forEach(function (input) {\n      localStorage.setItem(input.name, input.value);\n      input.parentElement.classList.remove('form__valid');\n    });\n  }\n\n  setTimeout(function () {\n    return form.reset();\n  });\n};\n\nif (forms.length) {\n  forms.forEach(function (form) {\n    var inputs = form.querySelectorAll('input[data-validate]');\n\n    if (inputs.length) {\n      inputs.forEach(function (input) {\n        var value = localStorage.getItem(input.name);\n\n        if (value) {\n          input.value = value;\n        }\n\n        input.parentElement.prepend(signSuccess.cloneNode(true)); // добавляет зеленую галочку если валидно\n\n        initValidation(input);\n      });\n    }\n\n    form.addEventListener('submit', onSubmit);\n  });\n}\n\n//# sourceURL=webpack:///./js/modules/validate.js?");
 
 /***/ }),
 

@@ -16,7 +16,7 @@
     background-image: none;
   }
 
-  @media (max-width: $viewport--lg) {
+  @media (max-width: $viewport--md) {
     padding-top: 6px;
   }
 }
@@ -108,7 +108,38 @@
   }
 }
 
-//=====================
+.feedback__btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 17px;
+  height: 17px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -2px;
+    width: 22px;
+    height: 1px;
+    background-color: $color-default-white;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.feedback__space {
+  display: none;
+}
+
 .feedback__overlay.js {
   position: fixed;
   top: 0;
@@ -135,12 +166,57 @@
 }
 
 .js h2 {
+  margin: 29px 0 13px 1px;
   font-size: 28px;
   line-height: 39px;
 }
 
-.js .form__input {
-  width: 100%;
+.js p {
+  padding-right: 30px;
 }
 
-//=====================
+.js .feedback__form {
+  margin-top: 32px;
+  padding-bottom: 0;
+}
+
+.js .form__input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.js input {
+  height: 52px;
+}
+
+.js input,
+.js textarea {
+  padding-left: 24px;
+}
+
+.js textarea {
+  height: 103px;
+  margin-bottom: 30px;
+}
+
+.js button[type="submit"] {
+  width: 100%;
+  margin-bottom: 34px;
+}
+
+.js .form__input-consent {
+  width: 400px;
+}
+
+.js label {
+  padding-left: 48px;
+}
+
+.js .feedback__space {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.js .feedback__btn {
+  display: block;
+}
