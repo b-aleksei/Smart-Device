@@ -163,19 +163,20 @@
 }
 
 .main-screen__btn-form {
+  display: inline-block;
   margin-left: 98px;
   padding: 18px 45px;
   font-family: $font-roboto-condensed;
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  border: 0;
   border-radius: 5px;
   letter-spacing: 0.05em;
+  text-align: center;
+  vertical-align: baseline;
   text-transform: uppercase;
   background-color: $color-default-white;
   color: inherit;
-  cursor: pointer;
 
   @include anim-shutter(in);
 
@@ -185,8 +186,7 @@
   }
 
   @media (max-width: $viewport--md) {
-    display: block;
-    margin: auto;
+    margin-left: 3px;
     padding: 18px 32px;
   }
 }

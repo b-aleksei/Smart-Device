@@ -1,9 +1,11 @@
 import onFocusPhoneInput from '../helpers/phoneMask';
 import checkValue from '../helpers/checkValidity';
+import modal from '../helpers/modal';
+import {deactivateForm} from './form';
 
+const overlay = document.querySelector('.feedback__overlay');
 const forms = document.querySelectorAll('form');
-const template = document.querySelector('template');
-const signSuccess = template.content.querySelector('#tmp4');
+const signSuccess = document.querySelector('#tmp4');
 
 const initValidation = (input) => {
   if (input.name === 'phone') {
@@ -28,6 +30,13 @@ const onSubmit = function (e) {
       input.parentElement.classList.remove('form__valid');
     });
   }
+
+  if (overlay.classList.contains('js')) {
+    deactivateForm();
+    setTimeout(() => modal.activate());
+  } else {
+    modal.activate();
+  }
   setTimeout(() => form.reset());
 };
 
@@ -43,7 +52,9 @@ if (forms.length) {
         if (value) {
           input.value = value;
         }
-        input.parentElement.prepend(signSuccess.cloneNode(true)); // добавляет зеленую галочку если валидно
+        if (signSuccess) {
+          input.parentElement.prepend(signSuccess.cloneNode(true)); // добавляет зеленую галочку если валидно
+        }
         initValidation(input);
       });
     }

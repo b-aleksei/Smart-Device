@@ -106,10 +106,10 @@
   <div class="main-screen__wrap-content">
     <h2>Печатные платы</h2>
     <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-    <button class="main-screen__btn-form" type="button">
+    <a class="main-screen__btn-form" href="#feedback">
       <span>Получить бесплатную консультацию</span>
       <span>бесплатная консультация</span>
-    </button>
+    </a>
     <a class="main-screen__btn-scroll" href="#adv">Скролл вниз</a>
   </div>
   <div class="main-screen__bg">
@@ -125,40 +125,40 @@
   <h2 class="visually-hidden">Наши преимущества</h2>
   <ul class="advantages__list">
     <li class="advantages__item">
-      <a class="advantages__link" href="#">
+      <div class="advantages__link">
         <svg width="29" height="35">
           <use href="#stopwatch"></use>
         </svg>
         <h3>Оперативные сроки</h3>
         <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
-      </a>
+      </div>
     </li>
     <li class="advantages__item">
-      <a class="advantages__link advantages__link--hired" href="#">
+      <div class="advantages__link advantages__link--hired">
         <svg width="35" height="35">
           <use href="#hired"></use>
         </svg>
         <h3>Крупные поставщики</h3>
         <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
-      </a>
+      </div>
     </li>
     <li class="advantages__item">
-      <a class="advantages__link advantages__link--secure" href="#">
+      <div class="advantages__link advantages__link--secure">
         <svg width="36" height="31">
           <use href="#detective"></use>
         </svg>
         <h3>Полная конфиденциальность</h3>
         <p>По желанию клиента <span></span> мы обеспечиваем полную конфеденциальность.</p>
-      </a>
+      </div>
     </li>
     <li class="advantages__item">
-      <a class="advantages__link" href="#">
+      <div class="advantages__link">
         <svg width="35" height="35">
           <use href="#dollar"></use>
         </svg>
         <h3>Персонализация стоимости</h3>
         <p>Мы <span></span> подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
-      </a>
+      </div>
     </li>
   </ul>
 </section>
@@ -244,18 +244,18 @@
   </div>
 </section>
 
-  <section class="feedback">
+  <section id="feedback" class="feedback">
   <div class="feedback__overlay">
     <div class="feedback__wrap">
       <h2>Остались вопросы? Задайте их нам!</h2>
       <p>Мы проконсультируем Вас бесплатно</p>
       <form class="feedback__form form" action="#" method="post">
         <div class="form__input form__input--name">
-          <input name="name" data-validate type="text" aria-label="Введите Ваше Имя" maxlength="32" placeholder="Имя"
+          <input name="name" pattern="[^\d#@+/\\]*" data-validate type="text" aria-label="Введите Ваше Имя" maxlength="32" placeholder="Имя"
                   required>
         </div>
         <div class="form__input form__input--phone">
-          <input name="phone" data-validate type="text" aria-label="Введите Ваш номер телефона" placeholder="Телефон"
+          <input name="phone" pattern="[\d+\-()\s]*" data-validate type="text" aria-label="Введите Ваш номер телефона" placeholder="Телефон"
                   required>
         </div>
         <div class="form__comment">
@@ -373,7 +373,19 @@
   </div>
 </footer>
 
-<template>
+<div class="modal">
+    <div class="modal__wrap">
+      <svg width="100" height="90">
+        <use href="#tick"></use>
+      </svg>
+      <h2 class="modal__title">Заявка принята</h2>
+      <p class="modal__content">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения
+        деталей!</p>
+      <button class="modal__close" type="button" aria-label="Закрыть окно">Закрыть</button>
+    </div>
+</div>
+
+<div style="display: none;" class="template">
   <p id="tmp1">Закажите звонок</p>
   <p id="tmp2">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
   <p id="tmp3">отправить</p>
@@ -383,7 +395,7 @@
     </svg>
   </span>
   <p id="tmp5">Вы ввели недопустимый символ</p>
-</template>
+</div>
 
 <script src="js/vendor.js"></script>
 <script src="js/main.js"></script>

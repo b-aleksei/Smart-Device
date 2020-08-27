@@ -1,15 +1,15 @@
-<section class="feedback">
+<section id="feedback" class="feedback">
   <div class="feedback__overlay">
     <div class="feedback__wrap">
       <h2>Остались вопросы? Задайте их нам!</h2>
       <p>Мы проконсультируем Вас бесплатно</p>
       <form class="feedback__form form" action="#" method="post">
         <div class="form__input form__input--name">
-          <input name="name" data-validate type="text" aria-label="Введите Ваше Имя" maxlength="32" placeholder="Имя"
+          <input name="name" pattern="[^\d#@+/\\]*" data-validate type="text" aria-label="Введите Ваше Имя" maxlength="32" placeholder="Имя"
                   required>
         </div>
         <div class="form__input form__input--phone">
-          <input name="phone" data-validate type="text" aria-label="Введите Ваш номер телефона" placeholder="Телефон"
+          <input name="phone" pattern="[\d+\-()\s]*" data-validate type="text" aria-label="Введите Ваш номер телефона" placeholder="Телефон"
                   required>
         </div>
         <div class="form__comment">
