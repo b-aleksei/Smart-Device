@@ -52,7 +52,9 @@ if (forms.length) {
         if (value) {
           input.value = value;
         }
-        input.parentElement.prepend(signSuccess.cloneNode(true)); // добавляет зеленую галочку если валидно
+        if (signSuccess) {
+          input.parentElement.prepend(signSuccess.cloneNode(true)); // добавляет зеленую галочку если валидно
+        }
         initValidation(input);
       });
     }
