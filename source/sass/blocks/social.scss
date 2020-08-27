@@ -36,7 +36,7 @@
   &:focus {
     color: $color-blue;
 
-    & svg {
+    svg {
       transform: scale(1.1);
     }
   }
@@ -44,7 +44,7 @@
   &:active {
     color: $color-svg-default;
 
-    & svg {
+    svg {
       transform: scale(1);
     }
 
