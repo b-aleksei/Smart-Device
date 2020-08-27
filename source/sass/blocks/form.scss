@@ -29,7 +29,6 @@
   color: $color-default-white;
   font-family: $font-default;
   font-size: 16px;
-  line-height: 30px;
 
   &::placeholder {
     color: $color-default-white;
@@ -41,6 +40,7 @@
 .form__input input {
   height: 50px;
   padding: 0 17px;
+  line-height: 30px;
 
   @media (max-width: $viewport--md) {
     height: 52px;
@@ -60,6 +60,7 @@
 
   @media (max-width: $viewport--lg) {
     height: 160px;
+    margin-bottom: 45px;
   }
 
   @media (max-width: $viewport--md) {
@@ -126,7 +127,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 2px;
+    top: 0;
     left: 0;
     width: 16px;
     height: 16px;

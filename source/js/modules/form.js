@@ -2,7 +2,7 @@ import createFocusTrap from '../vendor/focus-trap.min';
 
 const openForm = document.querySelector('.nav__btn');
 const overlay = document.querySelector('.feedback__overlay');
-let container = document.querySelector('.feedback__wrap1');
+let container = document.querySelector('.feedback__wrap');
 if (!container) {
   container = document.body;
 }

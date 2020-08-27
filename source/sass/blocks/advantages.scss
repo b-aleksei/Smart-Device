@@ -66,11 +66,11 @@
 
   @media (max-width: $viewport--lg) {
     padding: 0 21px 0 24px;
+    border-left-width: 2px;
   }
 
   @media (max-width: $viewport--md) {
     padding-left: 25px;
-    border-left-width: 2px;
   }
 }
 
@@ -134,31 +134,42 @@
 .advantages__link p {
   margin-bottom: 66px;
   font-size: 16px;
-  line-height: 21.5px;
+  line-height: 21px;
 
   @media (max-width: $viewport--lg) {
     margin-top: 10px;
-    margin-bottom: 23px;
+    margin-bottom: 20px;
+    line-height: 22px;
   }
 
   @media (max-width: $viewport--md) {
-    margin-bottom: 27px;
+    margin-bottom: 24px;
   }
 }
 
 .advantages__link--secure p {
+  margin-top: 18px;
+
   @media (max-width: $viewport--lg) {
     margin-top: 17px;
   }
 
   @media (max-width: $viewport--md) {
-    margin-top: -7px;
+    margin-top: -8px;
+  }
+}
+
+.advantages__link--person p {
+  margin-top: 17px;
+
+  @media (max-width: $viewport--lg) {
+    margin-top: 6px;
   }
 }
 
 .advantages__link--secure h3 {
   @media (max-width: $viewport--md) {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }
 
