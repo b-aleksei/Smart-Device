@@ -3,7 +3,6 @@
     url("../img/polygon-right.svg");
   background-position: 11.9% 45px, 98.3% 90.3%;
   background-repeat: no-repeat, no-repeat;
-  scroll-snap-align: start;
 
   @media (max-width: $viewport--lg) {
     background-image: none;
@@ -46,16 +45,15 @@
 }
 
 .advantages__link {
-  display: block;
   width: 100%;
   padding: 0 42px;
   border: 1px solid $color-border-advantages;
   border-left: 3px solid $color-blue;
   background-color: $color-default-white;
   transition: $default-transition;
+  cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $color-blue;
     border-color: $color-blue;
     color: $color-default-white;
@@ -64,10 +62,6 @@
     svg {
       color: $color-default-white;
     }
-  }
-
-  &:active {
-    transform: scale(0.97);
   }
 
   @media (max-width: $viewport--lg) {

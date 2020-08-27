@@ -1,9 +1,11 @@
 import onFocusPhoneInput from '../helpers/phoneMask';
 import checkValue from '../helpers/checkValidity';
+import modal from '../helpers/modal';
+import {deactivateForm} from '../modules/form';
 
+const overlay = document.querySelector('.feedback__overlay');
 const forms = document.querySelectorAll('form');
-const template = document.querySelector('template');
-const signSuccess = template.content.querySelector('#tmp4');
+const signSuccess = document.querySelector('#tmp4');
 
 const initValidation = (input) => {
   if (input.name === 'phone') {
@@ -28,6 +30,12 @@ const onSubmit = function (e) {
       input.parentElement.classList.remove('form__valid');
     });
   }
+
+  if (overlay.classList.contains('js')) {
+    console.log('contains js');
+    deactivateForm();
+  }
+  modal.activate(); // вызов модального окна
   setTimeout(() => form.reset());
 };
 
