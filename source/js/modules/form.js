@@ -1,5 +1,6 @@
 import createFocusTrap from '../vendor/focus-trap.min';
 
+const mainContainer = document.querySelector('.feedback');
 const openForm = document.querySelector('.nav__btn');
 const overlay = document.querySelector('.feedback__overlay');
 let container = document.querySelector('.feedback__wrap');
@@ -81,6 +82,9 @@ let focusTrapOne = createFocusTrap(container, {
 
 if (openForm) {
   openForm.addEventListener('click', function () {
+    if (mainContainer) {
+      mainContainer.classList.remove('op', 'tr');
+    }
     focusTrapOne.activate();
   });
 }
