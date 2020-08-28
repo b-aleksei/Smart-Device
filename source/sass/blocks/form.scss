@@ -153,11 +153,11 @@
   outline: 1px solid red;
 }
 
-.form__valid .form__input--valid {
+.form__valid .valid {
   transform: translateY(-50%) scale(1);
 }
 
-.form__input--valid {
+.valid {
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scale(0);

@@ -1,19 +1,18 @@
 import createFocusTrap from '../vendor/focus-trap.min';
 
-let overlay = document.querySelector('.modal');
-let container = document.querySelector('.modal__wrap');
-let btnClose = document.querySelector('.modal__close');
+const overlay = document.querySelector('.modal');
+const container = document.querySelector('.modal__wrap');
+const btnClose = document.querySelector('.modal__close');
 const body = document.body;
 
-let focusTrapOne = createFocusTrap(container, {
+const focusTrapOne = createFocusTrap(container, {
   initialFocus: btnClose,
   fallbackFocus: btnClose,
   escapeDeactivates: true,
   clickOutsideDeactivates: true,
   onActivate() {
     overlay.classList.add('modal--active');
-    //  для предотвращения скрола
-    body.dataset.scrollY = self.pageYOffset;
+    body.dataset.scrollY = self.pageYOffset; //  для предотвращения скрола
     body.style.top = `-${body.dataset.scrollY}px`;
     body.classList.add('body-lock');
     btnClose.addEventListener('click', function () {

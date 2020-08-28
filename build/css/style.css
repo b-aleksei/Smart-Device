@@ -1541,11 +1541,11 @@ a {
 .form__invalid label::before {
   outline: 1px solid red; }
 
-.form__valid .form__input--valid {
+.form__valid .valid {
   -webkit-transform: translateY(-50%) scale(1);
           transform: translateY(-50%) scale(1); }
 
-.form__input--valid {
+.valid {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%) scale(0);
