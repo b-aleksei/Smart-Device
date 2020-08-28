@@ -72,6 +72,13 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden; }
 
+.op {
+  opacity: 0; }
+
+.tr {
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in; }
+
 @-webkit-keyframes bounce {
   0% {
     -webkit-transform: translateY(2000px);

@@ -48,3 +48,11 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.op {
+  opacity: 0;
+}
+
+.tr {
+  transition: $default-transition ease-in;
+}
