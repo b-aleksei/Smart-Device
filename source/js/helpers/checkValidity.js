@@ -1,5 +1,6 @@
 const regExpName = /^[\s-]+$|^\s*-+|[^A-Za-zА-Яа-я\-.\s']+/;
-const errorMes = document.querySelector('#tmp5');
+const errorSign = document.querySelector('#tmp5');
+const errorEmpty = document.querySelector('#tmp6');
 
 const checkValidity = function (input) {
   if (!input.validity.valid) {
@@ -15,8 +16,12 @@ const checkValue = function (input) {
   input.setCustomValidity('');
   if (input.name === 'name') {
 
-    if (regExpName.test(input.value) && errorMes) {
-      input.setCustomValidity(errorMes.textContent);
+    if (input.value === '' && errorEmpty) {
+      input.setCustomValidity(errorEmpty.textContent);
+    }
+
+    if (regExpName.test(input.value) && errorSign) {
+      input.setCustomValidity(errorSign.textContent);
     }
   }
 
