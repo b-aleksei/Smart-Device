@@ -124,8 +124,7 @@
     transform: scale(0.95);
   }
 
-  &:hover svg,
-  &:focus svg {
+  &:hover svg {
     @include anim-buzz-out;
   }
 }

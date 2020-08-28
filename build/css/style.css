@@ -453,17 +453,15 @@ a {
     -webkit-transform: scale(0.95);
             transform: scale(0.95); }
   .nav__link--mail:hover svg,
-  .nav__link--mail:focus svg,
-  .nav__link--phone:hover svg,
-  .nav__link--phone:focus svg {
+  .nav__link--phone:hover svg {
     -webkit-animation-name: buzz-out;
             animation-name: buzz-out;
     -webkit-animation-duration: 0.3s;
             animation-duration: 0.3s;
     -webkit-animation-timing-function: linear;
             animation-timing-function: linear;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1; }
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
 
 .nav__link--mail svg {
   margin-right: 20px; }

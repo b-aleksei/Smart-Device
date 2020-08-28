@@ -103,7 +103,7 @@
   animation-name: buzz-out;
   animation-duration: $default-transition;
   animation-timing-function: linear;
-  animation-iteration-count: 1;
+  animation-iteration-count: infinite;
 }
 
 @mixin anim-underline-from-center {
