@@ -1982,7 +1982,8 @@ a {
       padding: 12px 15px 0 15px; } }
 
 .footer__container a {
-  padding: 13px 0; }
+  padding: 13px 0;
+  cursor: pointer; }
 
 .footer__copyright:not(:last-child) {
   padding-right: 30px; }
