@@ -141,7 +141,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var firstCheckbox = document.querySelector('#checkbox-1');\nvar secondCheckbox = document.querySelector('#checkbox-2');\n\nvar changeAttr = function changeAttr(mutations) {\n  console.log('mutations ', mutations);\n\n  if (firstCheckbox.checked === 'true') {\n    secondCheckbox.checked = 'false';\n  }\n};\n\nvar observer = new MutationObserver(changeAttr);\n\nif (firstCheckbox) {\n  observer.observe(firstCheckbox, {\n    attributes: true,\n    childList: true,\n    // наблюдать за непосредственными детьми\n    subtree: true,\n    // и более глубокими потомками\n    characterDataOldValue: true,\n    attributeFilter: ['checked']\n  });\n}\n\n//# sourceURL=webpack:///./js/modules/accordeon.js?");
+eval("var firstCheckbox = document.querySelector('#checkbox-1');\nvar secondCheckbox = document.querySelector('#checkbox-2');\n\nif (firstCheckbox && secondCheckbox) {\n  firstCheckbox.addEventListener('change', function () {\n    if (firstCheckbox.checked === true) {\n      secondCheckbox.checked = false;\n    }\n  });\n  secondCheckbox.addEventListener('change', function () {\n    if (secondCheckbox.checked === true) {\n      firstCheckbox.checked = false;\n    }\n  });\n}\n\n//# sourceURL=webpack:///./js/modules/accordeon.js?");
 
 /***/ }),
 

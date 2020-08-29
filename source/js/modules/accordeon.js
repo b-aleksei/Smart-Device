@@ -1,22 +1,16 @@
 const firstCheckbox = document.querySelector('#checkbox-1');
 const secondCheckbox = document.querySelector('#checkbox-2');
 
+if (firstCheckbox && secondCheckbox) {
+  firstCheckbox.addEventListener('change', function () {
+    if (firstCheckbox.checked === true) {
+      secondCheckbox.checked = false;
+    }
+  });
 
-const changeAttr = function (mutations) {
-  console.log('mutations ', mutations);
-  if (firstCheckbox.checked === 'true') {
-    secondCheckbox.checked = 'false';
-  }
-};
-
-const observer = new MutationObserver(changeAttr);
-
-if (firstCheckbox) {
-  observer.observe(firstCheckbox, {
-    attributes: true,
-    childList: true, // наблюдать за непосредственными детьми
-    subtree: true, // и более глубокими потомками
-    characterDataOldValue: true,
-    attributeFilter: ['checked'],
+  secondCheckbox.addEventListener('change', function () {
+    if (secondCheckbox.checked === true) {
+      firstCheckbox.checked = false;
+    }
   });
 }
