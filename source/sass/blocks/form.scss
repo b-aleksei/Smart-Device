@@ -26,6 +26,7 @@
   width: 100%;
   background-color: rgba($color-default-white, 0.1);
   border: none;
+  border-radius: 0;
   color: $color-default-white;
   font-family: $font-default;
   font-size: 16px;
@@ -44,7 +45,7 @@
 
 .form__input input {
   height: 50px;
-  padding: 0 17px;
+  padding: 0 17px 3px 17px;
   line-height: 30px;
 
   @media (max-width: $viewport--md) {
@@ -60,7 +61,7 @@
   display: block;
   padding: 13px 10px 0 17px;
   height: 154px;
-  margin-bottom: 43px;
+  margin-bottom: 42px;
   resize: none;
 
   @media (max-width: $viewport--lg) {
@@ -69,8 +70,9 @@
   }
 
   @media (max-width: $viewport--md) {
+    padding-top: 15px;
     height: 104px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 }
 
@@ -102,6 +104,7 @@
 }
 
 .form__input-consent {
+  order: 2;
   width: 263px;
 
   @media (max-width: $viewport--lg) {
@@ -132,11 +135,15 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 1px;
     left: 0;
     width: 16px;
     height: 16px;
     border: 1px solid $color-default-white;
+
+    @media (max-width: $viewport--md) {
+      top: 2px;
+    }
   }
 
   &::after {
