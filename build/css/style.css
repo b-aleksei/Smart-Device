@@ -1277,7 +1277,7 @@ a {
 
 .goods__link {
   display: block; }
-  .goods__link:hover figcaption::before {
+  .goods__link:hover figure::before {
     -webkit-animation-name: icon-wobble-horizontal;
             animation-name: icon-wobble-horizontal;
     -webkit-animation-duration: 1s;

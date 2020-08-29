@@ -167,7 +167,7 @@
 
 @mixin icon-wobble-horizontal {
   &:hover {
-    figcaption::before {
+    figure::before {
       animation-name: icon-wobble-horizontal;
       animation-duration: 1s;
       animation-timing-function: ease-in-out;
