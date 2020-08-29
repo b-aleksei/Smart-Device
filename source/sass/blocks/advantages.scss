@@ -153,10 +153,6 @@
   @media (max-width: $viewport--lg) {
     margin-top: 17px;
   }
-
-  @media (max-width: $viewport--md) {
-    margin-top: -8px;
-  }
 }
 
 .advantages__link--person p {
@@ -181,7 +177,7 @@
   }
 
   @media (max-width: $viewport--md) {
-    margin-bottom: 53px;
+    margin-bottom: 27px;
   }
 }
 

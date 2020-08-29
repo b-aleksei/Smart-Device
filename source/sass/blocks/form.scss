@@ -26,6 +26,7 @@
   width: 100%;
   background-color: rgba($color-default-white, 0.1);
   border: none;
+  border-radius: 0;
   color: $color-default-white;
   font-family: $font-default;
   font-size: 16px;
@@ -102,6 +103,7 @@
 }
 
 .form__input-consent {
+  order: 2;
   width: 263px;
 
   @media (max-width: $viewport--lg) {
@@ -137,6 +139,10 @@
     width: 16px;
     height: 16px;
     border: 1px solid $color-default-white;
+
+    @media (max-width: $viewport--md) {
+      top: 2px;
+    }
   }
 
   &::after {

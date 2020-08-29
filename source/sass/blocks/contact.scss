@@ -19,3 +19,10 @@
     padding-right: 30px;
   }
 }
+
+.contact__list div {
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba($color-text-black, 0.5);
+  cursor: default;
+}

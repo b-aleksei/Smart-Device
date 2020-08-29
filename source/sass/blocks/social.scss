@@ -6,12 +6,13 @@
   list-style: none;
 
   @media (max-width: $viewport--lg) {
-    padding-top: 2px;
+    margin-top: -3px;
     max-width: 220px;
     margin-bottom: 16px;
   }
 
   @media (max-width: $viewport--md) {
+    margin-top: 2px;
     max-width: 260px;
     margin-bottom: 53px;
   }
