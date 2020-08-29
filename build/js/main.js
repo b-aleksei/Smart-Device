@@ -130,7 +130,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _che
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_validate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/validate */ \"./js/modules/validate.js\");\n/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form */ \"./js/modules/form.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scroll */ \"./js/modules/scroll.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _modules_intersect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/intersect */ \"./js/modules/intersect.js\");\n/* harmony import */ var _modules_intersect__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_intersect__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n//# sourceURL=webpack:///./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_validate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/validate */ \"./js/modules/validate.js\");\n/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form */ \"./js/modules/form.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scroll */ \"./js/modules/scroll.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/accordeon */ \"./js/modules/accordeon.js\");\n/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _modules_intersect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/intersect */ \"./js/modules/intersect.js\");\n/* harmony import */ var _modules_intersect__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_intersect__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\n//# sourceURL=webpack:///./js/main.js?");
+
+/***/ }),
+
+/***/ "./js/modules/accordeon.js":
+/*!*********************************!*\
+  !*** ./js/modules/accordeon.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("var firstCheckbox = document.querySelector('#checkbox-1');\nvar secondCheckbox = document.querySelector('#checkbox-2');\n\nif (firstCheckbox && secondCheckbox) {\n  firstCheckbox.addEventListener('change', function () {\n    if (firstCheckbox.checked === true) {\n      secondCheckbox.checked = false;\n    }\n  });\n  secondCheckbox.addEventListener('change', function () {\n    if (secondCheckbox.checked === true) {\n      firstCheckbox.checked = false;\n    }\n  });\n}\n\n//# sourceURL=webpack:///./js/modules/accordeon.js?");
 
 /***/ }),
 
