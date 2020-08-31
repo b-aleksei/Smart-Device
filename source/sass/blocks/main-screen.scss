@@ -16,6 +16,7 @@
   }
 
   @media (max-width: $viewport--lg) {
+    justify-content: flex-start;
     overflow-x: hidden;
     padding-left: 88px;
   }
@@ -41,6 +42,7 @@
   position: relative;
   width: 718px;
   margin-right: 71px;
+  z-index: 10;
 
   @media (max-width: $viewport--lg) {
     width: 430px;

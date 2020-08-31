@@ -541,6 +541,9 @@ a {
       margin-left: auto; } }
   @media (max-width: 1023px) {
     .main-screen {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
       overflow-x: hidden;
       padding-left: 88px; } }
   @media (max-width: 767px) {
@@ -559,7 +562,8 @@ a {
 .main-screen__wrap-content {
   position: relative;
   width: 718px;
-  margin-right: 71px; }
+  margin-right: 71px;
+  z-index: 10; }
   @media (max-width: 1023px) {
     .main-screen__wrap-content {
       width: 430px;
