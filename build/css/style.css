@@ -570,7 +570,11 @@ a {
       margin-right: auto; } }
   @media (max-width: 767px) {
     .main-screen__wrap-content {
-      margin: auto; } }
+      -ms-grid-column-align: center;
+          justify-self: center;
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center; } }
 
 .main-screen__bg {
   width: 755px;
