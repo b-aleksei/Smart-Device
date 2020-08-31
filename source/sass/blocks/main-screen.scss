@@ -16,6 +16,8 @@
   }
 
   @media (max-width: $viewport--lg) {
+    display: flex;
+    justify-content: flex-start;
     overflow-x: hidden;
     padding-left: 88px;
   }

@@ -541,6 +541,12 @@ a {
       margin-left: auto; } }
   @media (max-width: 1023px) {
     .main-screen {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
       overflow-x: hidden;
       padding-left: 88px; } }
   @media (max-width: 767px) {
