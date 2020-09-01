@@ -4,6 +4,7 @@
   background-image: url("../img/desktop/bg-main@1x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 
   @include retina {
     background-image: url("../img/desktop/bg-main@2x.jpg");

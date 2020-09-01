@@ -3,6 +3,20 @@
   flex-shrink: 0;
   max-width: 300px;
   align-items: center;
+
+  stroke-dasharray: 0, 300;
+  stroke: rgba(0, 0, 0, 0.4);
+  stroke-width: 2;
+
+  &:hover {
+    animation: dasharray 7s infinite alternate;
+
+    @keyframes dasharray {
+      100% {
+        stroke-dasharray: 300, 0;
+      }
+    }
+  }
 }
 
 .logo--footer {
