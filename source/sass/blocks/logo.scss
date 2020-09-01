@@ -4,18 +4,19 @@
   max-width: 300px;
   align-items: center;
 
-  stroke-dasharray: 0, 300;
+  stroke-dasharray: 0, 200;
   stroke: rgba(0, 0, 0, 0.4);
   stroke-width: 2;
+  transition: $default-transition;
 
   &:hover {
-    animation: dasharray 7s infinite alternate;
+    animation: dasharray 6s infinite alternate;
+  }
+}
 
-    @keyframes dasharray {
-      100% {
-        stroke-dasharray: 300, 0;
-      }
-    }
+@keyframes dasharray {
+  100% {
+    stroke-dasharray: 200, 0;
   }
 }
 

@@ -285,20 +285,22 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  stroke-dasharray: 0, 300;
+  stroke-dasharray: 0, 200;
   stroke: rgba(0, 0, 0, 0.4);
-  stroke-width: 2; }
+  stroke-width: 2;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
   .logo:hover {
-    -webkit-animation: dasharray 7s infinite alternate;
-            animation: dasharray 7s infinite alternate; }
+    -webkit-animation: dasharray 6s infinite alternate;
+            animation: dasharray 6s infinite alternate; }
 
 @-webkit-keyframes dasharray {
   100% {
-    stroke-dasharray: 300, 0; } }
+    stroke-dasharray: 200, 0; } }
 
 @keyframes dasharray {
   100% {
-    stroke-dasharray: 300, 0; } }
+    stroke-dasharray: 200, 0; } }
 
 .logo--footer {
   -webkit-box-align: start;
