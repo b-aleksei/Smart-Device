@@ -1587,22 +1587,21 @@ a {
 .form__invalid label::before {
   outline: 1px solid red; }
 
-.form__valid .valid {
-  -webkit-transform: translateY(-50%) scale(1);
-          transform: translateY(-50%) scale(1); }
-
-.valid {
+.form__input::after {
+  content: "\2714";
   position: absolute;
+  font-size: 25px;
   top: 50%;
+  right: 5px;
+  color: #3f8920;
   -webkit-transform: translateY(-50%) scale(0);
           transform: translateY(-50%) scale(0);
-  right: 5px;
-  width: 20px;
-  height: 18px;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s; }
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.form__valid::after {
+  -webkit-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1); }
 
 .feedback {
   padding: 61px 0 0 0;
@@ -2070,11 +2069,11 @@ a {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  overflow-y: scroll;
   -webkit-transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, -webkit-transform 0.3s;
-  overflow-y: scroll; }
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, -webkit-transform 0.3s; }
   .modal--active {
     -webkit-transform: scale(1);
             transform: scale(1);

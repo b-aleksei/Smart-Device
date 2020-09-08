@@ -10,10 +10,10 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  overflow-y: scroll;
   transition: opacity $default-transition,
     visibility $default-transition,
     transform $default-transition;
-  overflow-y: scroll;
 
   &--active {
     transform: scale(1);

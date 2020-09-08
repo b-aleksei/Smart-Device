@@ -5,7 +5,6 @@ import {deactivateForm} from './form';
 
 const overlay = document.querySelector('.feedback__overlay');
 const forms = document.querySelectorAll('form');
-const signSuccess = document.querySelector('#tmp4');
 
 const initValidation = (input) => {
   if (input.name === 'phone') {
@@ -51,9 +50,6 @@ if (forms.length) {
         let value = localStorage.getItem(input.name);
         if (value) {
           input.value = value;
-        }
-        if (signSuccess) {
-          input.parentElement.prepend(signSuccess.cloneNode(true)); // добавляет зеленую галочку если валидно
         }
         initValidation(input);
       });
